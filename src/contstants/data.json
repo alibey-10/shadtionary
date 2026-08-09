@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "logo-cloud",
+		"title": "Logo Cloud",
+		"description": "A logo cloud is a compact grid or strip of brand marks — clients, partners, or integrations — shown together as social proof without asking the user to read a list.",
+		"alsoCalled": ["logo grid", "trusted-by", "brand showcase"],
+		"tags": []
+	},
+	{
 		"slug": "marquee",
 		"title": "Marquee",
 		"description": "A marquee is an endlessly looping strip of content — logos, quotes, or chips — that scrolls horizontally or vertically so a long set fits a short viewport without pagination.",

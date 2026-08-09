@@ -10,5 +10,11 @@
 		"title": "Drawer vs Sheet",
 		"description": "Drawer: bottom panel for mobile.\n Sheet: side panel for desktop.",
 		"entries": ["drawer", "sheet"]
+	},
+	{
+		"slug": "logo-cloud-vs-marquee",
+		"title": "Logo Cloud vs Marquee",
+		"description": "Logo Cloud: static, scannable brand strip.\n Marquee: endless looping strip for long sets.",
+		"entries": ["logo-cloud", "marquee"]
 	}
 ]

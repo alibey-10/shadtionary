@@ -20,6 +20,7 @@ import { DropdownMenuAnatomy } from "./dropdown-menu-anatomy";
 import { HoverCardAnatomy } from "./hover-card-anatomy";
 import { InputOtpAnatomy } from "./input-otp-anatomy";
 import { LightboxAnatomy } from "./lightbox-anatomy";
+import { LogoCloudAnatomy } from "./logo-cloud-anatomy";
 import { MarqueeAnatomy } from "./marquee-anatomy";
 import { MasonryLayoutAnatomy } from "./masonry-layout-anatomy";
 import { NavigationMenuAnatomy } from "./navigation-menu-anatomy";
@@ -60,6 +61,7 @@ const anatomy = {
 	"hover-card": <HoverCardAnatomy />,
 	"input-otp": <InputOtpAnatomy />,
 	lightbox: <LightboxAnatomy />,
+	"logo-cloud": <LogoCloudAnatomy />,
 	marquee: <MarqueeAnatomy />,
 	"masonry-layout": <MasonryLayoutAnatomy />,
 	"navigation-menu": <NavigationMenuAnatomy />,
