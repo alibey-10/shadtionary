@@ -16,5 +16,11 @@
 		"title": "Logo Cloud vs Marquee",
 		"description": "Logo Cloud: static, scannable brand strip.\n Marquee: endless looping strip for long sets.",
 		"entries": ["logo-cloud", "marquee"]
+	},
+	{
+		"slug": "site-header-vs-navigation-bar",
+		"title": "Site Header vs Navigation Bar",
+		"description": "Site Header: the whole top band.\n Navigation Bar: the destination links inside it.",
+		"entries": ["site-header", "navigation-bar"]
 	}
 ]
