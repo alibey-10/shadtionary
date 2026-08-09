@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "navigation-bar",
+		"title": "Navigation Bar",
+		"description": "A navigation bar is the primary link strip — usually a nav landmark — that lists top-level destinations inside the site header, separate from brand and utility actions.",
+		"alsoCalled": ["navbar", "top nav", "header nav"],
+		"tags": ["<nav />"]
+	},
+	{
 		"slug": "logo-cloud",
 		"title": "Logo Cloud",
 		"description": "A logo cloud is a compact grid or strip of brand marks — clients, partners, or integrations — shown together as social proof without asking the user to read a list.",

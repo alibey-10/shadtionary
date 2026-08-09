@@ -23,6 +23,7 @@ import { LightboxThumbnail } from "./lightbox-thumbnail";
 import { LogoCloudThumbnail } from "./logo-cloud-thumbnail";
 import { MarqueeThumbnail } from "./marquee-thumbnail";
 import { MasonryLayoutThumbnail } from "./masonry-layout-thumbnail";
+import { NavigationBarThumbnail } from "./navigation-bar-thumbnail";
 import { NavigationMenuThumbnail } from "./navigation-menu-thumbnail";
 import { PopoverThumbnail } from "./popover-thumbnail";
 import { RadioGroupThumbnail } from "./radio-group-thumbnail";
@@ -64,6 +65,7 @@ const thumbnails = {
 	"logo-cloud": <LogoCloudThumbnail />,
 	marquee: <MarqueeThumbnail />,
 	"masonry-layout": <MasonryLayoutThumbnail />,
+	"navigation-bar": <NavigationBarThumbnail />,
 	"navigation-menu": <NavigationMenuThumbnail />,
 	popover: <PopoverThumbnail />,
 	"radio-group": <RadioGroupThumbnail />,

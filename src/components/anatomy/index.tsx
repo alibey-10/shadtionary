@@ -23,6 +23,7 @@ import { LightboxAnatomy } from "./lightbox-anatomy";
 import { LogoCloudAnatomy } from "./logo-cloud-anatomy";
 import { MarqueeAnatomy } from "./marquee-anatomy";
 import { MasonryLayoutAnatomy } from "./masonry-layout-anatomy";
+import { NavigationBarAnatomy } from "./navigation-bar-anatomy";
 import { NavigationMenuAnatomy } from "./navigation-menu-anatomy";
 import { PopoverAnatomy } from "./popover-anatomy";
 import { RadioGroupAnatomy } from "./radio-group-anatomy";
@@ -64,6 +65,7 @@ const anatomy = {
 	"logo-cloud": <LogoCloudAnatomy />,
 	marquee: <MarqueeAnatomy />,
 	"masonry-layout": <MasonryLayoutAnatomy />,
+	"navigation-bar": <NavigationBarAnatomy />,
 	"navigation-menu": <NavigationMenuAnatomy />,
 	popover: <PopoverAnatomy />,
 	"radio-group": <RadioGroupAnatomy />,
