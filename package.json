@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "vite dev --port 3000",
+    "d":"vite dev --port 3001",
     "generate-routes": "tsr generate",
     "build": "vite build",
     "preview": "vite preview",

@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "bento-grid",
+		"title": "Bento Grid",
+		"description": "A bento grid is an asymmetric layout of unequal tiles — named after the Japanese bento box — where larger cells spotlight primary content and smaller ones hold supporting pieces.",
+		"alsoCalled": ["bento box", "dashboard grid", "bento box layout"],
+		"tags": []
+	},
+	{
 		"slug": "avatar-group",
 		"title": "Avatar Group",
 		"description": "An avatar group is a cluster of overlapping user images — compact circles that show team members, chat participants, or collaborators at a glance, often with a +N count for overflow.",
