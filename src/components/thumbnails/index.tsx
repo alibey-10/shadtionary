@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { AccordionThumbnail } from "./accordion-thumbnail";
 import { AlertThumbnail } from "./alert-thumbnail";
+import { AvatarGroupThumbnail } from "./avatar-group-thumbnail";
 import { BreadcrumbThumbnail } from "./breadcrumb-thumbnail";
 import { CalendarThumbnail } from "./calendar-thumbnail";
 import { CardThumbnail } from "./card-thumbnail";
@@ -37,6 +38,7 @@ import { WizardThumbnail } from "./wizard-thumbnail";
 
 const thumbnails = {
 	accordion: <AccordionThumbnail />,
+	"avatar-group": <AvatarGroupThumbnail />,
 	alert: <AlertThumbnail />,
 	breadcrumb: <BreadcrumbThumbnail />,
 	calendar: <CalendarThumbnail />,

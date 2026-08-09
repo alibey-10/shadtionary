@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "avatar-group",
+		"title": "Avatar Group",
+		"description": "An avatar group is a cluster of overlapping user images — compact circles that show team members, chat participants, or collaborators at a glance, often with a +N count for overflow.",
+		"alsoCalled": ["avatar stack", "stacked avatars", "team avatars"],
+		"tags": []
+	},
+	{
 		"slug": "combobox",
 		"title": "Combobox (Autocomplete)",
 		"description": "A combobox is a searchable single-choice control — a text input paired with a filterable option list so users type to narrow long catalogs and pick one predefined value without leaving the form.",
