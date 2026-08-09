@@ -20,6 +20,7 @@ import { DropdownMenuThumbnail } from "./dropdown-menu-thumbnail";
 import { HoverCardThumbnail } from "./hover-card-thumbnail";
 import { InputOtpThumbnail } from "./input-otp-thumbnail";
 import { LightboxThumbnail } from "./lightbox-thumbnail";
+import { MasonryLayoutThumbnail } from "./masonry-layout-thumbnail";
 import { NavigationMenuThumbnail } from "./navigation-menu-thumbnail";
 import { PopoverThumbnail } from "./popover-thumbnail";
 import { RadioGroupThumbnail } from "./radio-group-thumbnail";
@@ -58,6 +59,7 @@ const thumbnails = {
 	"hover-card": <HoverCardThumbnail />,
 	"input-otp": <InputOtpThumbnail />,
 	lightbox: <LightboxThumbnail />,
+	"masonry-layout": <MasonryLayoutThumbnail />,
 	"navigation-menu": <NavigationMenuThumbnail />,
 	popover: <PopoverThumbnail />,
 	"radio-group": <RadioGroupThumbnail />,

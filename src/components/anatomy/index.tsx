@@ -20,6 +20,7 @@ import { DropdownMenuAnatomy } from "./dropdown-menu-anatomy";
 import { HoverCardAnatomy } from "./hover-card-anatomy";
 import { InputOtpAnatomy } from "./input-otp-anatomy";
 import { LightboxAnatomy } from "./lightbox-anatomy";
+import { MasonryLayoutAnatomy } from "./masonry-layout-anatomy";
 import { NavigationMenuAnatomy } from "./navigation-menu-anatomy";
 import { PopoverAnatomy } from "./popover-anatomy";
 import { RadioGroupAnatomy } from "./radio-group-anatomy";
@@ -58,6 +59,7 @@ const anatomy = {
 	"hover-card": <HoverCardAnatomy />,
 	"input-otp": <InputOtpAnatomy />,
 	lightbox: <LightboxAnatomy />,
+	"masonry-layout": <MasonryLayoutAnatomy />,
 	"navigation-menu": <NavigationMenuAnatomy />,
 	popover: <PopoverAnatomy />,
 	"radio-group": <RadioGroupAnatomy />,

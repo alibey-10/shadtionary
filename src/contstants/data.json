@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "masonry-layout",
+		"title": "Masonry Layout",
+		"description": "A masonry layout packs items of varying heights into vertical columns — like a brick wall — filling gaps so the grid stays dense without empty row cells.",
+		"alsoCalled": ["waterfall layout", "pinterest grid", "brick layout"],
+		"tags": []
+	},
+	{
 		"slug": "bento-grid",
 		"title": "Bento Grid",
 		"description": "A bento grid is an asymmetric layout of unequal tiles — named after the Japanese bento box — where larger cells spotlight primary content and smaller ones hold supporting pieces.",
