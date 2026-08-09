@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "marquee",
+		"title": "Marquee",
+		"description": "A marquee is an endlessly looping strip of content — logos, quotes, or chips — that scrolls horizontally or vertically so a long set fits a short viewport without pagination.",
+		"alsoCalled": ["ticker", "infinite scroller", "logo ticker"],
+		"tags": []
+	},
+	{
 		"slug": "masonry-layout",
 		"title": "Masonry Layout",
 		"description": "A masonry layout packs items of varying heights into vertical columns — like a brick wall — filling gaps so the grid stays dense without empty row cells.",
