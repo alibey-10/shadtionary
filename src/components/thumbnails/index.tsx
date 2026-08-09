@@ -29,6 +29,7 @@ import { PopoverThumbnail } from "./popover-thumbnail";
 import { RadioGroupThumbnail } from "./radio-group-thumbnail";
 import { SelectThumbnail } from "./select-thumbnail";
 import { SheetThumbnail } from "./sheet-thumbnail";
+import { SiteHeaderThumbnail } from "./site-header-thumbnail";
 import { SliderThumbnail } from "./slider-thumbnail";
 import { StepperThumbnail } from "./stepper-thumbnail";
 import { SwitchThumbnail } from "./switch-thumbnail";
@@ -71,6 +72,7 @@ const thumbnails = {
 	"radio-group": <RadioGroupThumbnail />,
 	select: <SelectThumbnail />,
 	sheet: <SheetThumbnail />,
+	"site-header": <SiteHeaderThumbnail />,
 	slider: <SliderThumbnail />,
 	stepper: <StepperThumbnail />,
 	switch: <SwitchThumbnail />,

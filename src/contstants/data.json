@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "site-header",
+		"title": "Site Header",
+		"description": "A site header is the persistent top band — usually a banner landmark — that holds brand, primary navigation, and site-wide utilities so users can orient and move without leaving the page chrome.",
+		"alsoCalled": ["global header", "masthead", "top bar"],
+		"tags": ["<header />"]
+	},
+	{
 		"slug": "navigation-bar",
 		"title": "Navigation Bar",
 		"description": "A navigation bar is the primary link strip — usually a nav landmark — that lists top-level destinations inside the site header, separate from brand and utility actions.",
