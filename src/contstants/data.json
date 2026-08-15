@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "radar-chart",
+		"title": "Radar Chart",
+		"description": "A radar chart is a polar plot of values on radiating axes, so a profile across several metrics reads as a polygon rather than a set of bars.",
+		"alsoCalled": ["spider chart", "spider web chart", "star plot"],
+		"tags": []
+	},
+	{
 		"slug": "pie-chart",
 		"title": "Pie Chart",
 		"description": "A pie chart is a circular plot of slices, so each value reads as a share of one whole rather than a length from a shared baseline.",

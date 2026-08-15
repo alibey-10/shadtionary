@@ -1,4 +1,4 @@
-import { EChartsAreaChart } from "@/components/evilcharts/charts/echarts-area-chart";
+import { EChartsLineChart } from "@/components/evilcharts/charts/echarts-line-chart";
 import type { ChartConfig } from "@/components/evilcharts/ui/echarts-chart";
 import { cn } from "@/lib/utils";
 
@@ -35,28 +35,25 @@ function LineChartThumbnail({ className }: { className?: string }) {
 			className={cn("pointer-events-none w-full select-none", className)}
 		>
 			<div className="flex aspect-5/3 w-full overflow-hidden rounded-lg bg-secondary p-1.5">
-				<EChartsAreaChart
-					animation={false}
+				<EChartsLineChart
 					className="h-full min-h-0 w-full"
 					config={config}
 					curveType="monotone"
 					data={data}
 					xDataKey="x"
 				>
-					<EChartsAreaChart.Grid />
-					<EChartsAreaChart.Area
+					<EChartsLineChart.Grid />
+					<EChartsLineChart.Line
 						dataKey="y"
 						strokeVariant="solid"
 						strokeWidth={2}
-						variant="none"
 					/>
-					<EChartsAreaChart.Area
+					<EChartsLineChart.Line
 						dataKey="z"
 						strokeVariant="solid"
 						strokeWidth={2}
-						variant="none"
 					/>
-				</EChartsAreaChart>
+				</EChartsLineChart>
 			</div>
 		</div>
 	);

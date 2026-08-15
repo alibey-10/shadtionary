@@ -37,7 +37,6 @@ function PieChartThumbnail({ className }: { className?: string }) {
 		>
 			<div className="flex aspect-5/3 w-full overflow-hidden rounded-lg bg-secondary p-1.5">
 				<EChartsPieChart
-					animation={false}
 					className="h-full min-h-0 w-full"
 					config={config}
 					data={data}
