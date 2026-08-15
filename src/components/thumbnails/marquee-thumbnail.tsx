@@ -86,7 +86,7 @@ function MarqueeTrack({
 	className?: string;
 }) {
 	return (
-		<div className={cn("flex", className)}>
+		<div className={cn("flex min-w-0 w-full overflow-hidden", className)}>
 			<div
 				className={cn(
 					"flex shrink-0 items-center gap-1.5 pr-1.5 motion-reduce:animate-none",
@@ -112,9 +112,12 @@ function MarqueeThumbnail({ className }: { className?: string }) {
 	return (
 		<div
 			aria-hidden
-			className={cn("pointer-events-none w-full select-none", className)}
+			className={cn(
+				"pointer-events-none w-full min-w-0 overflow-hidden select-none",
+				className,
+			)}
 		>
-			<div className="relative flex aspect-5/3 w-full flex-col justify-center gap-2 overflow-hidden rounded-lg bg-secondary p-2">
+			<div className="relative flex aspect-5/3 w-full min-w-0 flex-col justify-center gap-2 overflow-hidden rounded-lg bg-secondary p-2">
 				<MarqueeTrack Row={RowOne} />
 				<MarqueeTrack Row={RowTwo} reverse className="opacity-80" />
 

@@ -2,9 +2,9 @@ import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
-// import anatomy from "@/components/anatomy";
-// import { PreviewChrome } from "@/components/preview-chrome";
 import { ArticleLoadingSkeleton } from "@/components/article-loading-skeleton";
+import { PreviewChrome } from "@/components/preview-chrome";
+import thumbnails from "@/components/thumbnails";
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -93,13 +93,12 @@ function EntryHeader({ entry }: { entry: (typeof entries)[number] }) {
 
 function ContentPage() {
 	const { body, entry } = Route.useLoaderData();
-	// const preview = anatomy[entry.slug as keyof typeof anatomy];
+	const preview = thumbnails[entry.slug as keyof typeof thumbnails];
 
 	return (
-		<div className="mx-auto w-full max-w-3xl px-3 md:px-6 py-12">
-			<div className="">
-				{/* <div className="lg:grid lg:grid-cols-[6fr_4fr] lg:items-start lg:gap-8"> */}
-				<div className="order-2 lg:order-1">
+		<div className="mx-auto w-full max-w-6xl px-3 md:px-6 py-12">
+			<section className="lg:grid lg:grid-cols-[6fr_4fr] lg:items-start lg:gap-8">
+				<article className="order-2 lg:order-1">
 					<EntryHeader entry={entry} />
 					{body ? (
 						<Suspense fallback={<ArticleLoadingSkeleton />}>
@@ -108,40 +107,40 @@ function ContentPage() {
 					) : (
 						<p className="text-sm text-muted-foreground">Content not found</p>
 					)}
-				</div>
+				</article>
 
-				{/* <div className="order-1 mb-8 lg:sticky lg:top-20 lg:order-2 lg:mb-0 lg:self-start lg:pl-6">
+				<div className="order-1 mb-4 min-w-0 lg:sticky lg:top-20 lg:order-2 lg:mb-0 lg:self-start lg:pl-6">
 					<h2 className="font-semibold mb-2 text-secondary-foreground text-sm">
-						{`<${entry.title} /> anatomy`}
+						{`<${entry.title} />`}
 					</h2>
 					<PreviewChrome
 						variant="entry"
-						contentClassName="px-0"
-						className="border-0"
+						className="overflow-hidden"
+						contentClassName="py-3 min-h-48 lg:min-h-56"
 					>
 						{preview}
 					</PreviewChrome>
-					</div> */}
-				<div className="py-2">
-					<Button
-						variant="secondary"
-						className="mt-4 w-full"
-						nativeButton={false}
-						size="lg"
-						render={(props) => (
-							<a
-								{...props}
-								href={urls.contentEdit(entry.slug)}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Edit on GitHub
-								<HugeiconsIcon icon={LinkSquare01Icon} className="size-4" />
-							</a>
-						)}
-					/>
+					<div className="py-4">
+						<Button
+							variant="secondary"
+							className="w-full"
+							nativeButton={false}
+							size="lg"
+							render={(props) => (
+								<a
+									{...props}
+									href={urls.contentEdit(entry.slug)}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Edit on GitHub
+									<HugeiconsIcon icon={LinkSquare01Icon} className="size-4" />
+								</a>
+							)}
+						/>
+					</div>
 				</div>
-			</div>
+			</section>
 		</div>
 	);
 }
