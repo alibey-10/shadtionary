@@ -28,6 +28,7 @@ import { MarqueeThumbnail } from "./marquee-thumbnail";
 import { MasonryLayoutThumbnail } from "./masonry-layout-thumbnail";
 import { NavigationBarThumbnail } from "./navigation-bar-thumbnail";
 import { NavigationMenuThumbnail } from "./navigation-menu-thumbnail";
+import { PieChartThumbnail } from "./pie-chart-thumbnail";
 import { PopoverThumbnail } from "./popover-thumbnail";
 import { RadioGroupThumbnail } from "./radio-group-thumbnail";
 import { SelectThumbnail } from "./select-thumbnail";
@@ -74,6 +75,7 @@ const thumbnails = {
 	"masonry-layout": <MasonryLayoutThumbnail />,
 	"navigation-bar": <NavigationBarThumbnail />,
 	"navigation-menu": <NavigationMenuThumbnail />,
+	"pie-chart": <PieChartThumbnail />,
 	popover: <PopoverThumbnail />,
 	"radio-group": <RadioGroupThumbnail />,
 	select: <SelectThumbnail />,

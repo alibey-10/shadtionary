@@ -28,6 +28,7 @@ import { MarqueeAnatomy } from "./marquee-anatomy";
 import { MasonryLayoutAnatomy } from "./masonry-layout-anatomy";
 import { NavigationBarAnatomy } from "./navigation-bar-anatomy";
 import { NavigationMenuAnatomy } from "./navigation-menu-anatomy";
+import { PieChartAnatomy } from "./pie-chart-anatomy";
 import { PopoverAnatomy } from "./popover-anatomy";
 import { RadioGroupAnatomy } from "./radio-group-anatomy";
 import { SelectAnatomy } from "./select-anatomy";
@@ -74,6 +75,7 @@ const anatomy = {
 	"masonry-layout": <MasonryLayoutAnatomy />,
 	"navigation-bar": <NavigationBarAnatomy />,
 	"navigation-menu": <NavigationMenuAnatomy />,
+	"pie-chart": <PieChartAnatomy />,
 	popover: <PopoverAnatomy />,
 	"radio-group": <RadioGroupAnatomy />,
 	select: <SelectAnatomy />,

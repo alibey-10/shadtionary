@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "pie-chart",
+		"title": "Pie Chart",
+		"description": "A pie chart is a circular plot of slices, so each value reads as a share of one whole rather than a length from a shared baseline.",
+		"alsoCalled": ["circle chart", "pie graph"],
+		"tags": []
+	},
+	{
 		"slug": "bar-chart",
 		"title": "Bar Chart",
 		"description": "A bar chart is a plot of rectangular bars along a categorical axis, so each value reads as a length from a shared baseline rather than a connected stroke.",
