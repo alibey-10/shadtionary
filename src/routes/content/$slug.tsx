@@ -1,10 +1,18 @@
-import { ArrowLeft01Icon, LinkSquare01Icon } from "@hugeicons/core-free-icons";
+import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 // import anatomy from "@/components/anatomy";
 // import { PreviewChrome } from "@/components/preview-chrome";
 import { ArticleLoadingSkeleton } from "@/components/article-loading-skeleton";
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import entries from "@/contstants/data.json";
 import { urls } from "@/contstants/urls";
@@ -54,12 +62,17 @@ export const Route = createFileRoute("/content/$slug")({
 function EntryHeader({ entry }: { entry: (typeof entries)[number] }) {
 	return (
 		<>
-			<Link to="/">
-				<Button variant="ghost" size="sm" className="mb-6 -ml-2">
-					<HugeiconsIcon icon={ArrowLeft01Icon} strokeWidth={2} />
-					Back
-				</Button>
-			</Link>
+			<Breadcrumb className="mb-6">
+				<BreadcrumbList>
+					<BreadcrumbItem>
+						<BreadcrumbLink render={<Link to="/" />}>Home</BreadcrumbLink>
+					</BreadcrumbItem>
+					<BreadcrumbSeparator />
+					<BreadcrumbItem>
+						<BreadcrumbPage>{entry.title}</BreadcrumbPage>
+					</BreadcrumbItem>
+				</BreadcrumbList>
+			</Breadcrumb>
 			<div className="mb-6 space-y-2">
 				<h1 className="text-2xl lg:text-3xl font-bold lg:font-extrabold tracking-tight">
 					{entry.title}

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { AccordionAnatomy } from "./accordion-anatomy";
 import { AlertAnatomy } from "./alert-anatomy";
+import { AreaChartAnatomy } from "./area-chart-anatomy";
 import { AvatarGroupAnatomy } from "./avatar-group-anatomy";
 import { BentoGridAnatomy } from "./bento-grid-anatomy";
 import { BreadcrumbAnatomy } from "./breadcrumb-anatomy";
@@ -20,6 +21,7 @@ import { DropdownMenuAnatomy } from "./dropdown-menu-anatomy";
 import { HoverCardAnatomy } from "./hover-card-anatomy";
 import { InputOtpAnatomy } from "./input-otp-anatomy";
 import { LightboxAnatomy } from "./lightbox-anatomy";
+import { LineChartAnatomy } from "./line-chart-anatomy";
 import { LogoCloudAnatomy } from "./logo-cloud-anatomy";
 import { MarqueeAnatomy } from "./marquee-anatomy";
 import { MasonryLayoutAnatomy } from "./masonry-layout-anatomy";
@@ -44,6 +46,7 @@ import { WizardAnatomy } from "./wizard-anatomy";
 
 const anatomy = {
 	accordion: <AccordionAnatomy />,
+	"area-chart": <AreaChartAnatomy />,
 	"avatar-group": <AvatarGroupAnatomy />,
 	"bento-grid": <BentoGridAnatomy />,
 	alert: <AlertAnatomy />,
@@ -63,6 +66,7 @@ const anatomy = {
 	"hover-card": <HoverCardAnatomy />,
 	"input-otp": <InputOtpAnatomy />,
 	lightbox: <LightboxAnatomy />,
+	"line-chart": <LineChartAnatomy />,
 	"logo-cloud": <LogoCloudAnatomy />,
 	marquee: <MarqueeAnatomy />,
 	"masonry-layout": <MasonryLayoutAnatomy />,

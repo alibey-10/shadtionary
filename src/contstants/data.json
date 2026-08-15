@@ -1,5 +1,19 @@
 [
 	{
+		"slug": "line-chart",
+		"title": "Line Chart",
+		"description": "A line chart is a plot of connected points along an ordered axis, so change over time reads as a stroke rather than a filled mass.",
+		"alsoCalled": ["line graph", "line plot", "trend chart"],
+		"tags": []
+	},
+	{
+		"slug": "area-chart",
+		"title": "Area Chart",
+		"description": "An area chart is a line plot with the region between the series and the baseline filled, so change over time reads as a shaded mass rather than a stroke alone.",
+		"alsoCalled": ["area graph", "filled line chart"],
+		"tags": []
+	},
+	{
 		"slug": "site-header",
 		"title": "Site Header",
 		"description": "A site header is the persistent top band — usually a banner landmark — that holds brand, primary navigation, and site-wide utilities so users can orient and move without leaving the page chrome.",

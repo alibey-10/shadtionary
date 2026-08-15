@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { AccordionThumbnail } from "./accordion-thumbnail";
 import { AlertThumbnail } from "./alert-thumbnail";
+import { AreaChartThumbnail } from "./area-chart-thumbnail";
 import { AvatarGroupThumbnail } from "./avatar-group-thumbnail";
 import { BentoGridThumbnail } from "./bento-grid-thumbnail";
 import { BreadcrumbThumbnail } from "./breadcrumb-thumbnail";
@@ -20,6 +21,7 @@ import { DropdownMenuThumbnail } from "./dropdown-menu-thumbnail";
 import { HoverCardThumbnail } from "./hover-card-thumbnail";
 import { InputOtpThumbnail } from "./input-otp-thumbnail";
 import { LightboxThumbnail } from "./lightbox-thumbnail";
+import { LineChartThumbnail } from "./line-chart-thumbnail";
 import { LogoCloudThumbnail } from "./logo-cloud-thumbnail";
 import { MarqueeThumbnail } from "./marquee-thumbnail";
 import { MasonryLayoutThumbnail } from "./masonry-layout-thumbnail";
@@ -44,6 +46,7 @@ import { WizardThumbnail } from "./wizard-thumbnail";
 
 const thumbnails = {
 	accordion: <AccordionThumbnail />,
+	"area-chart": <AreaChartThumbnail />,
 	"avatar-group": <AvatarGroupThumbnail />,
 	"bento-grid": <BentoGridThumbnail />,
 	alert: <AlertThumbnail />,
@@ -63,6 +66,7 @@ const thumbnails = {
 	"hover-card": <HoverCardThumbnail />,
 	"input-otp": <InputOtpThumbnail />,
 	lightbox: <LightboxThumbnail />,
+	"line-chart": <LineChartThumbnail />,
 	"logo-cloud": <LogoCloudThumbnail />,
 	marquee: <MarqueeThumbnail />,
 	"masonry-layout": <MasonryLayoutThumbnail />,

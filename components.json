@@ -20,6 +20,7 @@
   },
   "registries": {
     "@canvas-ui": "https://canvasui.dev/r/{name}.json",
-    "@shoogle": "https://shoogle.dev/r/{name}.json"
+    "@shoogle": "https://shoogle.dev/r/{name}.json",
+    "@evilcharts": "https://evilcharts.com/r/{name}.json"
   }
 }
