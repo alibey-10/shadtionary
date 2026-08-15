@@ -6,7 +6,8 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import React, { useState } from "react";
+import { LazyMount } from "@/components/lazy-mount";
 import { PreviewChrome } from "@/components/preview-chrome";
 import thumbnails from "@/components/thumbnails";
 import { Button } from "@/components/ui/button";
@@ -58,8 +59,8 @@ function Home() {
 							Visual Dictionary for UI Elements
 						</h1>
 						<p className="mt-2 max-w-2xl text-lg text-muted-foreground text-pretty">
-							Great resource for vibe coders and designers to better steer AI
-							agents in the right direction.
+							Great resource for vibe coders, designers and design engineers to
+							better steer AI agents in the right direction.
 						</p>
 					</div>
 					<div className="border-y border-dashed">
@@ -132,12 +133,17 @@ function Home() {
 											params={{ slug: entry.slug }}
 											className="block h-full rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
 										>
-											<Card className="h-full rounded-2xl bg-secondary/70 p-[2.5px] ring-0 transition-colors hover:bg-secondary dark:bg-secondary/40 hover:dark:bg-secondary/70">
+											<Card className="h-full rounded-2xl bg-secondary/60 p-[2.5px] ring-0 hover:bg-secondary dark:bg-secondary/40 hover:dark:bg-border">
 												<PreviewChrome
 													className="overflow-hidden"
 													contentClassName="py-3 min-h-48 lg:min-h-56"
 												>
-													{thumbnail}
+													<LazyMount rootMargin="10px 0px">
+														{" "}
+														<React.Fragment key={entry.slug}>
+															{thumbnail}
+														</React.Fragment>
+													</LazyMount>
 												</PreviewChrome>
 												<CardContent className="pb-4">
 													<CardTitle className="flex items-center justify-between gap-2 uppercase font-bold tracking-tight text-sm mb-2">
