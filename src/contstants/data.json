@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "bar-chart",
+		"title": "Bar Chart",
+		"description": "A bar chart is a plot of rectangular bars along a categorical axis, so each value reads as a length from a shared baseline rather than a connected stroke.",
+		"alsoCalled": ["bar graph", "column chart"],
+		"tags": []
+	},
+	{
 		"slug": "line-chart",
 		"title": "Line Chart",
 		"description": "A line chart is a plot of connected points along an ordered axis, so change over time reads as a stroke rather than a filled mass.",

@@ -4,6 +4,7 @@ import { AccordionAnatomy } from "./accordion-anatomy";
 import { AlertAnatomy } from "./alert-anatomy";
 import { AreaChartAnatomy } from "./area-chart-anatomy";
 import { AvatarGroupAnatomy } from "./avatar-group-anatomy";
+import { BarChartAnatomy } from "./bar-chart-anatomy";
 import { BentoGridAnatomy } from "./bento-grid-anatomy";
 import { BreadcrumbAnatomy } from "./breadcrumb-anatomy";
 import { CalendarAnatomy } from "./calendar-anatomy";
@@ -48,6 +49,7 @@ const anatomy = {
 	accordion: <AccordionAnatomy />,
 	"area-chart": <AreaChartAnatomy />,
 	"avatar-group": <AvatarGroupAnatomy />,
+	"bar-chart": <BarChartAnatomy />,
 	"bento-grid": <BentoGridAnatomy />,
 	alert: <AlertAnatomy />,
 	breadcrumb: <BreadcrumbAnatomy />,
