@@ -1,5 +1,12 @@
 [
 	{
+		"slug": "radial-chart",
+		"title": "Radial Chart",
+		"description": "A radial chart is a polar plot of concentric bars, so each value reads as an arc length around a shared center rather than a length from a straight baseline.",
+		"alsoCalled": ["radial bar chart", "circular bar chart", "polar bar chart"],
+		"tags": []
+	},
+	{
 		"slug": "radar-chart",
 		"title": "Radar Chart",
 		"description": "A radar chart is a polar plot of values on radiating axes, so a profile across several metrics reads as a polygon rather than a set of bars.",

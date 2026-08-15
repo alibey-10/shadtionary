@@ -31,6 +31,7 @@ import { NavigationMenuAnatomy } from "./navigation-menu-anatomy";
 import { PieChartAnatomy } from "./pie-chart-anatomy";
 import { PopoverAnatomy } from "./popover-anatomy";
 import { RadarChartAnatomy } from "./radar-chart-anatomy";
+import { RadialChartAnatomy } from "./radial-chart-anatomy";
 import { RadioGroupAnatomy } from "./radio-group-anatomy";
 import { SelectAnatomy } from "./select-anatomy";
 import { SheetAnatomy } from "./sheet-anatomy";
@@ -79,6 +80,7 @@ const anatomy = {
 	"pie-chart": <PieChartAnatomy />,
 	popover: <PopoverAnatomy />,
 	"radar-chart": <RadarChartAnatomy />,
+	"radial-chart": <RadialChartAnatomy />,
 	"radio-group": <RadioGroupAnatomy />,
 	select: <SelectAnatomy />,
 	sheet: <SheetAnatomy />,

@@ -31,6 +31,7 @@ import { NavigationMenuThumbnail } from "./navigation-menu-thumbnail";
 import { PieChartThumbnail } from "./pie-chart-thumbnail";
 import { PopoverThumbnail } from "./popover-thumbnail";
 import { RadarChartThumbnail } from "./radar-chart-thumbnail";
+import { RadialChartThumbnail } from "./radial-chart-thumbnail";
 import { RadioGroupThumbnail } from "./radio-group-thumbnail";
 import { SelectThumbnail } from "./select-thumbnail";
 import { SheetThumbnail } from "./sheet-thumbnail";
@@ -79,6 +80,7 @@ const thumbnails = {
 	"pie-chart": <PieChartThumbnail />,
 	popover: <PopoverThumbnail />,
 	"radar-chart": <RadarChartThumbnail />,
+	"radial-chart": <RadialChartThumbnail />,
 	"radio-group": <RadioGroupThumbnail />,
 	select: <SelectThumbnail />,
 	sheet: <SheetThumbnail />,
