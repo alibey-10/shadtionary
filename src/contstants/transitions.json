@@ -23,7 +23,7 @@
 		{
 			"id": "choreo",
 			"name": "Choreography",
-			"note": "Several parts move together, or one after another"
+			"note": "Parts of a view move, resize or arrive in sequence"
 		}
 	],
 	"transitions": [
@@ -55,6 +55,15 @@
 			"prompt": "blur fade transition, outgoing view blurs to 8px and fades, incoming view sharpens from blur as it fades in"
 		},
 		{
+			"slug": "fade-up",
+			"category": "fade",
+			"name": "Fade up",
+			"aka": "Slide-up fade, fade in up, rise in",
+			"desc": "The new view fades in while rising a short distance into place. The most common entrance on the web, for sections, cards and toasts.",
+			"how": "opacity + translateY",
+			"prompt": "fade up entrance: content fades in while moving up 12px, 300ms ease-out"
+		},
+		{
 			"slug": "push",
 			"category": "slide",
 			"name": "Push",
@@ -73,6 +82,15 @@
 			"prompt": "iOS-style stack navigation: new screen slides over from the right with a shadow, previous screen shifts left 30% and dims"
 		},
 		{
+			"slug": "uncover",
+			"category": "slide",
+			"name": "Uncover",
+			"aka": "Reveal slide, slide away, pop navigation",
+			"desc": "The old view slides off to the side and reveals the new one already waiting underneath. The reverse of slide over, so it reads as going back.",
+			"how": "transform on the outgoing view only, z-index above the incoming view",
+			"prompt": "uncover transition: the current page slides out to the right with a shadow, revealing the previous page underneath"
+		},
+		{
 			"slug": "shared-axis",
 			"category": "slide",
 			"name": "Shared axis",
@@ -80,6 +98,15 @@
 			"desc": "Both views shift a short distance in the same direction while they fade. Gentler than a full push, and the direction still tells you forward from back.",
 			"how": "translateX + opacity, Material motion pattern",
 			"prompt": "shared axis X transition: outgoing view slides 15% left and fades out, incoming view slides in from 15% right and fades in"
+		},
+		{
+			"slug": "sheet",
+			"category": "slide",
+			"name": "Sheet",
+			"aka": "Modal present, slide up, card stack",
+			"desc": "The new view slides up from the bottom as a card while the page behind shrinks a little and dims. How iOS presents modals, and how many mobile web apps open details.",
+			"how": "translateY on the sheet, scale + dim on the page behind",
+			"prompt": "sheet presentation: new view slides up from the bottom with rounded top corners, the page behind scales to 92% and dims"
 		},
 		{
 			"slug": "zoom",
@@ -91,6 +118,24 @@
 			"prompt": "zoom transition, old view scales up to 115% and fades out while the new view scales from 85% to 100% and fades in"
 		},
 		{
+			"slug": "pop",
+			"category": "scale",
+			"name": "Pop",
+			"aka": "Scale in, dialog open, zoom in fade",
+			"desc": "A dialog scales up from slightly smaller while it fades in, and the page behind dims. The standard enter animation for modals and dialogs.",
+			"how": "scale(0.95) + opacity on the dialog, backdrop fade",
+			"prompt": "dialog pop-in: scales from 95% to 100% and fades in over 150ms, backdrop fades to 50% black"
+		},
+		{
+			"slug": "origin-scale",
+			"category": "scale",
+			"name": "Origin-aware scale",
+			"aka": "Transform origin, grow from trigger, popover open",
+			"desc": "A menu or popover grows out of the button that opened it, instead of from its own center. Small, but it tells you where the panel came from.",
+			"how": "transform-origin set to the trigger side + scale",
+			"prompt": "popover opens with an origin-aware scale from the trigger corner, scale 0.6 to 1 with fade, transform-origin top right"
+		},
+		{
 			"slug": "flip",
 			"category": "scale",
 			"name": "Flip",
@@ -98,6 +143,15 @@
 			"desc": "The view turns over like a card to show its back. Used for flashcards, pricing toggles and front/back details.",
 			"how": "rotateY + perspective + backface-visibility: hidden",
 			"prompt": "3D card flip on the Y axis with perspective, the back face is hidden until it turns past 90 degrees"
+		},
+		{
+			"slug": "cube",
+			"category": "scale",
+			"name": "Cube",
+			"aka": "3D cube, cube rotate, stories transition",
+			"desc": "The two views are faces of a cube that turns to show the next face. Known from story viewers and image carousels.",
+			"how": "rotateY + translateX with transform-origin on the shared edge, perspective",
+			"prompt": "3D cube transition between slides, the cube rotates left to show the next face, with perspective"
 		},
 		{
 			"slug": "circle-reveal",
@@ -118,6 +172,15 @@
 			"prompt": "linear wipe transition from left to right using clip-path inset"
 		},
 		{
+			"slug": "soft-wipe",
+			"category": "reveal",
+			"name": "Soft wipe",
+			"aka": "Feathered wipe, gradient wipe, mask wipe",
+			"desc": "Like a wipe, but the edge is a soft gradient, so the new view melts in from one side instead of being cut in.",
+			"how": "mask-image: linear-gradient() with an animated stop",
+			"prompt": "soft gradient mask wipe from left to right, 20% feathered edge, using mask-image"
+		},
+		{
 			"slug": "curtain",
 			"category": "reveal",
 			"name": "Curtain",
@@ -125,6 +188,33 @@
 			"desc": "A solid panel sweeps in to cover the page, the content swaps while it's hidden, then the panel sweeps away. Common on agency and portfolio sites.",
 			"how": "an overlay element with transform, swap content at full cover",
 			"prompt": "curtain page transition: a solid brand-colored panel sweeps in from the left, the page swaps behind it, then the panel exits to the right"
+		},
+		{
+			"slug": "column-wipe",
+			"category": "reveal",
+			"name": "Column wipe",
+			"aka": "Staggered panels, stripe curtain, bar transition",
+			"desc": "Several vertical panels rise one after another to cover the page, the content swaps, then they leave. A favorite on agency and portfolio sites.",
+			"how": "several overlay panels with staggered transform delays",
+			"prompt": "page transition with five vertical panels that rise in a stagger to cover the screen, then exit upward to reveal the new page"
+		},
+		{
+			"slug": "split",
+			"category": "reveal",
+			"name": "Split",
+			"aka": "Doors, barn doors, split reveal",
+			"desc": "The old view splits down the middle and both halves slide apart like doors, revealing the new view behind.",
+			"how": "two clipped copies of the outgoing view, translateX in opposite directions",
+			"prompt": "split doors transition: the current page splits vertically down the middle and both halves slide apart to reveal the next page"
+		},
+		{
+			"slug": "tile-reveal",
+			"category": "reveal",
+			"name": "Tile reveal",
+			"aka": "Grid transition, pixel transition, mosaic",
+			"desc": "A grid of tiles pops in diagonally to cover the page, then pops away to show the new one. Feels digital and playful.",
+			"how": "a grid of overlay tiles with scale and staggered delays",
+			"prompt": "tile grid page transition: square tiles scale in diagonally from the top left to cover the page, then scale out to reveal the next page"
 		},
 		{
 			"slug": "shape-reveal",
@@ -152,6 +242,24 @@
 			"desc": "The new view's parts arrive one after another instead of all at once, each with a small delay. Guides the eye down the page.",
 			"how": "animation-delay per item, Motion staggerChildren",
 			"prompt": "staggered entrance, list items fade in and rise 8px one after another with a 60ms delay between each"
+		},
+		{
+			"slug": "expand",
+			"category": "choreo",
+			"name": "Expand",
+			"aka": "Accordion, collapse, height animation",
+			"desc": "A row grows taller to show more detail, and everything below it moves down to make room. Used for accordions, FAQs and expandable rows.",
+			"how": "height or grid-template-rows: 0fr → 1fr, Motion layout",
+			"prompt": "smooth expand and collapse: the row grows to show its details and the rows below slide down, animate grid-template-rows from 0fr to 1fr"
+		},
+		{
+			"slug": "reorder",
+			"category": "choreo",
+			"name": "Reorder",
+			"aka": "Layout animation, FLIP, list shuffle",
+			"desc": "When items change order, each one glides to its new spot instead of jumping. Used for sortable lists, filters and drag and drop.",
+			"how": "FLIP technique, Motion layout, view-transition-name per item",
+			"prompt": "animate list reordering with FLIP so each item glides to its new position, 250ms ease-in-out"
 		}
 	]
 }

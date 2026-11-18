@@ -32,7 +32,7 @@
 	background: color-mix(in oklab, var(--primary) 8%, var(--background));
 	opacity: 0;
 }
-.trx .scr > i,
+.trx .scr i,
 .trx .morph,
 .trx .curtain {
 	position: absolute;
@@ -47,7 +47,7 @@
 	height: 6%;
 	--fill: var(--bar-strong);
 }
-.trx .scr > .btn {
+.trx .scr .btn {
 	border-radius: 50%;
 	right: 6%;
 	top: 6%;
@@ -64,6 +64,30 @@
 .trx .hero,
 .trx .morph {
 	--fill: var(--primary);
+}
+.trx .row {
+	position: absolute;
+	inset: 0;
+}
+.trx .r1 {
+	transform: translateY(22%);
+}
+.trx .r2 {
+	transform: translateY(44%);
+}
+.trx .xp {
+	position: absolute;
+	left: 18%;
+	top: 39%;
+	width: 70%;
+	height: 16%;
+	display: none;
+}
+.trx .col,
+.trx .tile {
+	position: absolute;
+	z-index: 3;
+	background: var(--foreground);
 }
 .trx .morph,
 .trx .curtain {
@@ -459,9 +483,9 @@
 	65%,
 	100% {
 		left: 6%;
-		top: 7%;
+		top: 20%;
 		width: 88%;
-		height: 40%;
+		height: 30%;
 	}
 }
 
@@ -487,5 +511,432 @@
 	100% {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+/* ---------- Additional transitions ---------- */
+
+.t-fade-up .a {
+	animation-name: tx-se-out;
+}
+.t-fade-up .b {
+	animation-name: tx-fade-up;
+}
+@keyframes tx-fade-up {
+	0%,
+	45% {
+		opacity: 0;
+		transform: translateY(8%);
+		animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	}
+	65%,
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.t-uncover .a {
+	z-index: 2;
+	box-shadow: 8px 0 24px rgb(0 0 0 / 0.18);
+	animation-name: tx-uncover-a;
+}
+.t-uncover .b {
+	opacity: 1;
+	animation-name: tx-uncover-b;
+}
+@keyframes tx-uncover-a {
+	0%,
+	35% {
+		transform: translateX(0);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateX(100%);
+	}
+}
+@keyframes tx-uncover-b {
+	0%,
+	35% {
+		transform: translateX(-30%);
+		filter: brightness(0.75);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateX(0);
+		filter: brightness(1);
+	}
+}
+
+.t-sheet {
+	background: var(--foreground);
+}
+.t-sheet .a {
+	border-radius: 10px;
+	animation-name: tx-sheet-back;
+}
+.t-sheet .b {
+	opacity: 1;
+	inset: 9% 0 0;
+	border-radius: 12px 12px 0 0;
+	box-shadow: 0 -6px 20px rgb(0 0 0 / 0.18);
+	animation-name: tx-sheet-up;
+}
+@keyframes tx-sheet-back {
+	0%,
+	35% {
+		transform: scale(1);
+		filter: brightness(1);
+		border-radius: 0;
+		animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+	}
+	65%,
+	100% {
+		transform: scale(0.92);
+		filter: brightness(0.7);
+		border-radius: 10px;
+	}
+}
+@keyframes tx-sheet-up {
+	0%,
+	35% {
+		transform: translateY(105%);
+		animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+	}
+	65%,
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.t-pop .a {
+	animation-name: tx-dim;
+}
+.t-pop .b {
+	inset: 16% 22%;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	background: var(--background);
+	box-shadow: 0 12px 30px rgb(0 0 0 / 0.2);
+	animation-name: tx-pop;
+}
+@keyframes tx-dim {
+	0%,
+	35% {
+		filter: brightness(1);
+		animation-timing-function: ease-out;
+	}
+	50%,
+	100% {
+		filter: brightness(0.6);
+	}
+}
+@keyframes tx-pop {
+	0%,
+	35% {
+		opacity: 0;
+		transform: scale(0.95);
+		animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	50%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.t-origin-scale .b {
+	inset: 17% 5% auto auto;
+	width: 40%;
+	height: 56%;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background: var(--background);
+	box-shadow: 0 10px 24px rgb(0 0 0 / 0.16);
+	transform-origin: 100% 0;
+	animation-name: tx-origin;
+}
+.t-origin-scale .b .btn {
+	display: none;
+}
+@keyframes tx-origin {
+	0%,
+	35% {
+		opacity: 0;
+		transform: scale(0.6);
+		animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	52%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.t-cube {
+	perspective: 900px;
+	background: var(--foreground);
+}
+.t-cube .scr {
+	backface-visibility: hidden;
+}
+.t-cube .a {
+	transform-origin: 100% 50%;
+	animation-name: tx-cube-a;
+}
+.t-cube .b {
+	opacity: 1;
+	transform-origin: 0% 50%;
+	animation-name: tx-cube-b;
+}
+@keyframes tx-cube-a {
+	0%,
+	35% {
+		transform: translateX(0) rotateY(0);
+		filter: brightness(1);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateX(-100%) rotateY(-90deg);
+		filter: brightness(0.6);
+	}
+}
+@keyframes tx-cube-b {
+	0%,
+	35% {
+		transform: translateX(100%) rotateY(90deg);
+		filter: brightness(0.6);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateX(0) rotateY(0);
+		filter: brightness(1);
+	}
+}
+
+@property --tx-p {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
+}
+.t-soft-wipe .b {
+	opacity: 1;
+	-webkit-mask-image: linear-gradient(
+		90deg,
+		#000 var(--tx-p),
+		transparent calc(var(--tx-p) + 25%)
+	);
+	mask-image: linear-gradient(
+		90deg,
+		#000 var(--tx-p),
+		transparent calc(var(--tx-p) + 25%)
+	);
+	animation-name: tx-soft;
+}
+@keyframes tx-soft {
+	0%,
+	35% {
+		--tx-p: -25%;
+		animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+	}
+	65%,
+	100% {
+		--tx-p: 100%;
+	}
+}
+
+.t-column-wipe .col {
+	top: 0;
+	bottom: 0;
+	width: 20.5%;
+	animation-name: tx-col;
+	animation-delay: calc(var(--i) * var(--base, 3s) * 0.015 / var(--rate, 1));
+}
+.t-column-wipe .b {
+	animation-name: tx-cut;
+}
+@keyframes tx-col {
+	0%,
+	33% {
+		transform: translateY(101%);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	43%,
+	57% {
+		transform: translateY(0);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	67%,
+	100% {
+		transform: translateY(-101%);
+	}
+}
+
+.t-split .b {
+	opacity: 1;
+	animation-name: tx-split-b;
+}
+.t-split .a {
+	z-index: 2;
+}
+.t-split .a.l {
+	clip-path: inset(0 50% 0 0);
+	animation-name: tx-split-l;
+}
+.t-split .a.r {
+	clip-path: inset(0 0 0 50%);
+	animation-name: tx-split-r;
+}
+@keyframes tx-split-l {
+	0%,
+	35% {
+		transform: translateX(0);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateX(-51%);
+	}
+}
+@keyframes tx-split-r {
+	0%,
+	35% {
+		transform: translateX(0);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateX(51%);
+	}
+}
+@keyframes tx-split-b {
+	0%,
+	35% {
+		transform: scale(0.94);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: scale(1);
+	}
+}
+
+.t-tile-reveal .tile {
+	width: 12.6%;
+	height: 25.2%;
+	animation-name: tx-tile;
+	animation-delay: calc(var(--d) * var(--base, 3s) * 0.06 / var(--rate, 1));
+}
+.t-tile-reveal .b {
+	animation-name: tx-cut;
+}
+@keyframes tx-tile {
+	0%,
+	32% {
+		transform: scale(0);
+		animation-timing-function: cubic-bezier(0.34, 1.3, 0.64, 1);
+	}
+	42%,
+	58% {
+		transform: scale(1);
+		animation-timing-function: cubic-bezier(0.36, 0, 0.66, -0.3);
+	}
+	68%,
+	100% {
+		transform: scale(0);
+	}
+}
+
+.t-expand .xp {
+	display: block;
+	animation-name: tx-xp;
+}
+.t-expand .r1 {
+	animation-name: tx-push-r1;
+}
+.t-expand .r2 {
+	animation-name: tx-push-r2;
+}
+@keyframes tx-xp {
+	0%,
+	35% {
+		opacity: 0;
+		clip-path: inset(0 0 100% 0);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		opacity: 1;
+		clip-path: inset(0 0 0 0);
+	}
+}
+@keyframes tx-push-r1 {
+	0%,
+	35% {
+		transform: translateY(22%);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateY(40%);
+	}
+}
+@keyframes tx-push-r2 {
+	0%,
+	35% {
+		transform: translateY(44%);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateY(62%);
+	}
+}
+
+.t-reorder .r0 {
+	z-index: 1;
+	animation-name: tx-ro-0;
+}
+.t-reorder .r1 {
+	animation-name: tx-ro-1;
+}
+.t-reorder .r2 {
+	animation-name: tx-ro-2;
+}
+@keyframes tx-ro-0 {
+	0%,
+	35% {
+		transform: translateY(0);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateY(44%);
+	}
+}
+@keyframes tx-ro-1 {
+	0%,
+	38% {
+		transform: translateY(22%);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes tx-ro-2 {
+	0%,
+	41% {
+		transform: translateY(44%);
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+	65%,
+	100% {
+		transform: translateY(22%);
 	}
 }
