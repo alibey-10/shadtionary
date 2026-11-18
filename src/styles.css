@@ -158,3 +158,13 @@
     color: var(--foreground);
   }
 }
+
+/* Styles and Transitions pages: shared playback speed and pause (see MotionGallery). */
+.motion-gallery {
+  --rate: 1;
+}
+.motion-gallery[data-paused="true"] *,
+.motion-gallery[data-paused="true"] *::before,
+.motion-gallery[data-paused="true"] *::after {
+  animation-play-state: paused !important;
+}

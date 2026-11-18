@@ -39,10 +39,27 @@ export function Header({ className }: HeaderProps) {
 					>
 						Comparisons
 					</Button>
+					<Button
+						variant="ghost"
+						size="sm"
+						nativeButton={false}
+						render={(props) => <Link {...props} to="/styles" />}
+					>
+						Styles
+					</Button>
+					<Button
+						variant="ghost"
+						size="sm"
+						nativeButton={false}
+						render={(props) => <Link {...props} to="/transitions" />}
+					>
+						Transitions
+					</Button>
 					<ThemeToggle />
 					<Button
 						variant="ghost"
 						size="icon"
+						className="hidden sm:inline-flex"
 						nativeButton={false}
 						render={(props) => (
 							<a
@@ -59,6 +76,7 @@ export function Header({ className }: HeaderProps) {
 					<Button
 						variant="ghost"
 						size="icon"
+						className="hidden sm:inline-flex"
 						nativeButton={false}
 						render={(props) => (
 							<a

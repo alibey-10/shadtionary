@@ -1,0 +1,417 @@
+{
+	"categories": [
+		{
+			"id": "graphic",
+			"name": "Flat & graphic",
+			"note": "Bold shapes and color, little or no depth"
+		},
+		{
+			"id": "depth",
+			"name": "Depth & 3D",
+			"note": "Volume, lighting and dimension"
+		},
+		{
+			"id": "texture",
+			"name": "Light, color & texture",
+			"note": "Glow, blur, grain and paint"
+		},
+		{
+			"id": "drawn",
+			"name": "Lines & drawing",
+			"note": "Strokes, diagrams and hand-made marks"
+		},
+		{
+			"id": "retro",
+			"name": "Retro & digital",
+			"note": "Old screens, tapes, prints and frame rates"
+		},
+		{
+			"id": "typeui",
+			"name": "Type, UI & data",
+			"note": "Words, interfaces and numbers in motion"
+		}
+	],
+	"styles": [
+		{
+			"slug": "flat",
+			"category": "graphic",
+			"base": 2.4,
+			"name": "Flat 2D",
+			"aka": "Flat vector, flat design",
+			"desc": "Solid colors and simple shapes with no shadows, gradients or texture. Clean and easy to read, so it's the go-to for explainer videos.",
+			"prompt": "flat 2D vector animation, solid colors, no gradients or shadows",
+			"html": "<i class=\"f4\"></i><i class=\"f1\"></i><i class=\"f2\"></i><i class=\"f3\"></i>"
+		},
+		{
+			"slug": "swiss",
+			"category": "graphic",
+			"base": 4,
+			"name": "Swiss minimal",
+			"aka": "International Typographic Style, grid-based",
+			"desc": "A strict column grid, big bold numbers, lots of white space and one strong accent color. Motion snaps from column to column.",
+			"prompt": "Swiss minimal motion design, strict grid, bold sans-serif numbers, single red accent, snappy easing",
+			"html": "<span class=\"abs sw-num\">24</span><i class=\"sw-rule\"></i><span class=\"abs sw-col\"><b style=\"width:100%\"></b><b style=\"width:80%\"></b><b style=\"width:90%\"></b><b style=\"width:60%\"></b></span><i class=\"sw-sq\"></i>"
+		},
+		{
+			"slug": "bau",
+			"category": "graphic",
+			"base": 4,
+			"name": "Bauhaus geometric",
+			"aka": "Geometric abstract, modernist",
+			"desc": "Primary colors and basic shapes (circles, half circles, bars) moving in a tidy composition.",
+			"prompt": "Bauhaus geometric motion, red, yellow, blue and black shapes on off-white",
+			"html": "<i class=\"bh-q\"></i><i class=\"bh-bar\"></i><i class=\"bh-circle\"></i><i class=\"bh-half\"></i>"
+		},
+		{
+			"slug": "memphis",
+			"category": "graphic",
+			"base": 3,
+			"name": "Memphis",
+			"aka": "80s Memphis design, postmodern pattern",
+			"desc": "Playful geometric shapes, squiggles, zigzags and dot patterns in loud colors, scattered like confetti.",
+			"prompt": "Memphis design style, squiggles, zigzags, striped circles and triangles, bold 80s colors, floating motion",
+			"html": "<i class=\"mf m-circle\"></i><i class=\"mf m-zig\"></i><i class=\"mf m-half\"></i><i class=\"mf m-tri\"></i><svg class=\"m-squig\" viewBox=\"0 0 100 30\" aria-hidden=\"true\"><path d=\"M5 15 q10 -14 20 0 t20 0 t20 0 t20 0\"/></svg><i class=\"mf m-bar\" style=\"left:84%;top:40%;rotate:30deg\"></i><i class=\"mf m-bar\" style=\"left:22%;top:66%;rotate:-40deg;background:#3a86ff\"></i><i class=\"mf m-bar\" style=\"left:46%;top:8%;rotate:70deg;background:#2ec4b6\"></i>"
+		},
+		{
+			"slug": "nb",
+			"category": "graphic",
+			"base": 2.2,
+			"name": "Neo-brutalism",
+			"aka": "Neubrutalism, hard-shadow UI",
+			"desc": "Bright flat colors, thick black borders and hard offset shadows with no blur. Buttons press into their shadows.",
+			"prompt": "neo-brutalist style, bold flat colors, thick black outlines, hard offset drop shadows, chunky type",
+			"html": "<div class=\"abs nb-card\"><strong>Hello!</strong><b style=\"width:90%\"></b><b style=\"width:70%\"></b><b style=\"width:50%\"></b></div><svg class=\"nb-star\" viewBox=\"0 0 100 100\" aria-hidden=\"true\"><polygon points=\"50.0,4.0 62.9,32.2 93.7,35.8 70.9,56.8 77.0,87.2 50.0,72.0 23.0,87.2 29.1,56.8 6.3,35.8 37.1,32.2\"/></svg><span class=\"abs nb-tag\">NEW</span><span class=\"abs nb-btn\">CLICK</span>"
+		},
+		{
+			"slug": "pop",
+			"category": "graphic",
+			"base": 1.6,
+			"name": "Pop art comic",
+			"aka": "Ben-Day dots, comic book",
+			"desc": "Bold comic-book look with printed dot patterns, starburst shapes and punchy sound-effect words.",
+			"prompt": "pop art comic style, Ben-Day dots, starburst with POW text, bold outlines, punchy zoom",
+			"html": "<i class=\"pa-wrap\"><span class=\"pa-b\"></span><span class=\"pa-w\"></span><span class=\"pa-t\">POW!</span></i>"
+		},
+		{
+			"slug": "paper",
+			"category": "graphic",
+			"base": 5,
+			"name": "Paper cutout",
+			"aka": "Papercraft, layered paper",
+			"desc": "Flat layers that look cut from paper, separated by soft shadows so they read as stacked on top of each other.",
+			"prompt": "layered paper cutout style with soft drop shadows, gentle parallax",
+			"html": "<i class=\"sunp\"></i><i class=\"pl p1\"><b></b></i><i class=\"pl p2\"><b></b></i><i class=\"pl p3\"><b></b></i>"
+		},
+		{
+			"slug": "collage",
+			"category": "graphic",
+			"base": 0.5,
+			"name": "Collage",
+			"aka": "Mixed media, cut-and-paste, ransom note",
+			"desc": "Torn paper, newspaper scraps, halftone photos and tape layered together, with a slight stop-motion jitter.",
+			"prompt": "mixed media collage animation, torn paper, newspaper scraps, halftone cutouts, tape, stop-motion jitter",
+			"html": "<i class=\"cp c1\"></i><i class=\"cp c3\"></i><i class=\"cp c2\"></i><i class=\"cp tape\"></i><span class=\"abs rn cp\"><b style=\"--r:-6deg;background:#fff\">C</b><b style=\"--r:4deg;background:#ffd23f\">U</b><b style=\"--r:-3deg;background:#111;color:#fff\">T</b><b style=\"--r:8deg;background:#ff4d6d\">!</b></span><i class=\"noise\" style=\"mix-blend-mode:multiply;opacity:.2\"></i>"
+		},
+		{
+			"slug": "iso",
+			"category": "depth",
+			"base": 3,
+			"name": "Isometric",
+			"aka": "Iso, 2.5D",
+			"desc": "3D objects drawn at a fixed angle with no perspective, so parallel lines never meet. Common for tech, maps and diagrams.",
+			"prompt": "isometric 3D illustration style, floating cubes, soft pastel colors",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" aria-hidden=\"true\"><g transform=\"translate(150,100)\"><g class=\"iso-a\"><polygon points=\"0,-46 40,-23 0,0 -40,-23\" fill=\"#a5b4fc\"/><polygon points=\"-40,-23 0,0 0,46 -40,23\" fill=\"#6366f1\"/><polygon points=\"0,0 40,-23 40,23 0,46\" fill=\"#4338ca\"/></g></g><g transform=\"translate(236,66) scale(.5)\"><g class=\"iso-b\"><polygon points=\"0,-46 40,-23 0,0 -40,-23\" fill=\"#a5b4fc\"/><polygon points=\"-40,-23 0,0 0,46 -40,23\" fill=\"#6366f1\"/><polygon points=\"0,0 40,-23 40,23 0,46\" fill=\"#4338ca\"/></g></g><g transform=\"translate(74,62) scale(.38)\"><g class=\"iso-b\"><polygon points=\"0,-46 40,-23 0,0 -40,-23\" fill=\"#a5b4fc\"/><polygon points=\"-40,-23 0,0 0,46 -40,23\" fill=\"#6366f1\"/><polygon points=\"0,0 40,-23 40,23 0,46\" fill=\"#4338ca\"/></g></g></svg>"
+		},
+		{
+			"slug": "toon",
+			"category": "depth",
+			"base": 3,
+			"name": "Chunky isometric",
+			"aka": "Cartoon isometric, outlined 3D explainer",
+			"desc": "Isometric blocks with thick dark outlines, warm pastel fills and an iso grid behind. Small dots travel along the arrows to show data or requests moving.",
+			"prompt": "chunky isometric explainer, thick black outlines, rounded blocks in peach and lavender, iso grid background, dots flowing along arrows",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" aria-hidden=\"true\">\n<g class=\"ti-s\"><g transform=\"translate(92,112)\"><g class=\"ti-bob\"><polygon points=\"0,-30 52,-4 0,22 -52,-4\" fill=\"#f9dcc0\"/><polygon points=\"-52,-4 0,22 0,50 -52,24\" fill=\"#eab084\"/><polygon points=\"0,22 52,-4 52,24 0,50\" fill=\"#dc9a68\"/><text x=\"0\" y=\"0\" text-anchor=\"middle\">API</text></g></g>\n<g transform=\"translate(236,82)\"><g class=\"ti-bob ti-b2\"><path d=\"M-30 -20 V18 A30 12 0 0 0 30 18 V-20\" fill=\"#c9c0f2\"/><ellipse cx=\"0\" cy=\"-20\" rx=\"30\" ry=\"12\" fill=\"#e6e0fc\"/><text x=\"0\" y=\"12\" text-anchor=\"middle\">DB</text></g></g>\n<path d=\"M146 98 L198 72\" /><path d=\"M200 71 L190 71.5 L194.5 79.5 Z\" fill=\"#1e1e1e\"/>\n<path d=\"M204 92 L152 118\"/><path d=\"M150 119 L160 118.5 L155.5 110.5 Z\" fill=\"#1e1e1e\"/></g>\n<circle class=\"ti-dot d1\" cx=\"148\" cy=\"97\" r=\"4.5\" fill=\"#f2a65a\"/><circle class=\"ti-dot d2\" cx=\"202\" cy=\"93\" r=\"4.5\" fill=\"#8fd18a\"/>\n<g class=\"ti-pill\"><rect x=\"29\" y=\"25\" width=\"104\" height=\"22\" rx=\"11\" fill=\"#1e1e1e\"/><rect x=\"26\" y=\"22\" width=\"104\" height=\"22\" rx=\"11\" fill=\"#fffaf3\"/><text x=\"78\" y=\"37\" text-anchor=\"middle\">users · orders</text></g></svg>"
+		},
+		{
+			"slug": "clay",
+			"category": "depth",
+			"base": 2.4,
+			"name": "Clay 3D",
+			"aka": "Claymorphism, soft 3D, puffy",
+			"desc": "Rounded, inflated shapes with soft inner shadows. Works well with squash and stretch, where things flatten and bounce.",
+			"prompt": "soft clay 3D style, puffy pastel shapes, squash and stretch bounce",
+			"html": "<i class=\"floor\"></i><i class=\"clay c-pill\"></i><i class=\"clay c-cube\"></i><i class=\"clay c-ball\"></i>"
+		},
+		{
+			"slug": "gloss",
+			"category": "depth",
+			"base": 4,
+			"name": "Glossy 3D",
+			"aka": "3D render, plastic, studio render",
+			"desc": "Smooth, shiny objects with soft studio lighting, bright highlights and reflections on the floor.",
+			"prompt": "glossy 3D render, shiny plastic shapes, soft studio lighting, reflective floor",
+			"html": "<i class=\"gl-pill\"></i><i class=\"gl-shine\"></i><i class=\"gl-ball\"></i>"
+		},
+		{
+			"slug": "lowpoly",
+			"category": "depth",
+			"base": 3,
+			"name": "Low poly",
+			"aka": "Polygonal, faceted",
+			"desc": "Scenes built from visible flat triangles, each with its own shade, so surfaces look cut like a gem.",
+			"prompt": "low poly landscape, flat-shaded triangles, sunset palette",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\"><polygon class=\"lp2\" points=\"0.0,0.0 35.8,0.0 28.9,34.7\" fill=\"#453966\" stroke=\"#453966\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"0.0,0.0 28.9,34.7 0.0,36.1\" fill=\"#5e436a\" stroke=\"#5e436a\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"35.8,0.0 71.6,0.0 69.7,27.8\" fill=\"#443a69\" stroke=\"#443a69\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"35.8,0.0 69.7,27.8 28.9,34.7\" fill=\"#574068\" stroke=\"#574068\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"71.6,0.0 123.6,0.0 118.2,42.5\" fill=\"#4b3c68\" stroke=\"#4b3c68\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"71.6,0.0 118.2,42.5 69.7,27.8\" fill=\"#5f446c\" stroke=\"#5f446c\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"123.6,0.0 149.7,0.0 151.0,30.5\" fill=\"#443968\" stroke=\"#443968\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"123.6,0.0 151.0,30.5 118.2,42.5\" fill=\"#61446b\" stroke=\"#61446b\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"149.7,0.0 200.9,0.0 203.1,45.0\" fill=\"#5b487c\" stroke=\"#5b487c\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"149.7,0.0 203.1,45.0 151.0,30.5\" fill=\"#6d4d77\" stroke=\"#6d4d77\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"200.9,0.0 236.8,0.0 241.9,33.9\" fill=\"#524479\" stroke=\"#524479\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"200.9,0.0 241.9,33.9 203.1,45.0\" fill=\"#6b4a72\" stroke=\"#6b4a72\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"236.8,0.0 269.4,0.0 291.4,26.9\" fill=\"#524681\" stroke=\"#524681\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"236.8,0.0 291.4,26.9 241.9,33.9\" fill=\"#533d64\" stroke=\"#533d64\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"269.4,0.0 320.0,0.0 320.0,43.2\" fill=\"#4d3e6b\" stroke=\"#4d3e6b\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"269.4,0.0 320.0,43.2 291.4,26.9\" fill=\"#563d61\" stroke=\"#563d61\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"0.0,36.1 28.9,34.7 31.5,64.4\" fill=\"#7a495e\" stroke=\"#7a495e\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"0.0,36.1 31.5,64.4 0.0,67.8\" fill=\"#844a56\" stroke=\"#844a56\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"28.9,34.7 69.7,27.8 75.4,78.3\" fill=\"#895166\" stroke=\"#895166\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"28.9,34.7 75.4,78.3 31.5,64.4\" fill=\"#9e5762\" stroke=\"#9e5762\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"69.7,27.8 118.2,42.5 112.3,73.6\" fill=\"#8f5469\" stroke=\"#8f5469\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"69.7,27.8 112.3,73.6 75.4,78.3\" fill=\"#ad5f6b\" stroke=\"#ad5f6b\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"118.2,42.5 151.0,30.5 163.3,69.4\" fill=\"#8e5469\" stroke=\"#8e5469\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"118.2,42.5 163.3,69.4 112.3,73.6\" fill=\"#9e565e\" stroke=\"#9e565e\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"151.0,30.5 203.1,45.0 201.1,63.3\" fill=\"#90556d\" stroke=\"#90556d\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"151.0,30.5 201.1,63.3 163.3,69.4\" fill=\"#905160\" stroke=\"#905160\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"203.1,45.0 241.9,33.9 229.4,66.1\" fill=\"#7d495b\" stroke=\"#7d495b\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"203.1,45.0 229.4,66.1 201.1,63.3\" fill=\"#96535e\" stroke=\"#96535e\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"241.9,33.9 291.4,26.9 284.3,70.6\" fill=\"#75465c\" stroke=\"#75465c\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"241.9,33.9 284.3,70.6 229.4,66.1\" fill=\"#955360\" stroke=\"#955360\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"291.4,26.9 320.0,43.2 320.0,68.3\" fill=\"#814d62\" stroke=\"#814d62\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"291.4,26.9 320.0,68.3 284.3,70.6\" fill=\"#874c59\" stroke=\"#874c59\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"0.0,67.8 31.5,64.4 38.9,104.0\" fill=\"#ab5651\" stroke=\"#ab5651\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"0.0,67.8 38.9,104.0 0.0,109.7\" fill=\"#ea6f5c\" stroke=\"#ea6f5c\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"31.5,64.4 75.4,78.3 87.1,112.0\" fill=\"#ae554c\" stroke=\"#ae554c\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"31.5,64.4 87.1,112.0 38.9,104.0\" fill=\"#d86755\" stroke=\"#d86755\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"75.4,78.3 112.3,73.6 113.9,109.5\" fill=\"#cf6558\" stroke=\"#cf6558\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"75.4,78.3 113.9,109.5 87.1,112.0\" fill=\"#e36a52\" stroke=\"#e36a52\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"112.3,73.6 163.3,69.4 160.6,115.5\" fill=\"#354f71\" stroke=\"#354f71\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"112.3,73.6 160.6,115.5 113.9,109.5\" fill=\"#f7735a\" stroke=\"#f7735a\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"163.3,69.4 201.1,63.3 205.5,103.8\" fill=\"#3d5a80\" stroke=\"#3d5a80\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"163.3,69.4 205.5,103.8 160.6,115.5\" fill=\"#32496a\" stroke=\"#32496a\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"201.1,63.3 229.4,66.1 251.5,100.4\" fill=\"#c2635f\" stroke=\"#c2635f\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"201.1,63.3 251.5,100.4 205.5,103.8\" fill=\"#c05d50\" stroke=\"#c05d50\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"229.4,66.1 284.3,70.6 278.0,113.1\" fill=\"#b25850\" stroke=\"#b25850\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"229.4,66.1 278.0,113.1 251.5,100.4\" fill=\"#c35d4d\" stroke=\"#c35d4d\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"284.3,70.6 320.0,68.3 320.0,101.0\" fill=\"#b75b55\" stroke=\"#b75b55\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"284.3,70.6 320.0,101.0 278.0,113.1\" fill=\"#d76653\" stroke=\"#d76653\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"0.0,109.7 38.9,104.0 28.9,147.4\" fill=\"#334a6f\" stroke=\"#334a6f\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"0.0,109.7 28.9,147.4 0.0,143.8\" fill=\"#31466c\" stroke=\"#31466c\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"38.9,104.0 87.1,112.0 86.3,145.5\" fill=\"#32496d\" stroke=\"#32496d\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"38.9,104.0 86.3,145.5 28.9,147.4\" fill=\"#2c4062\" stroke=\"#2c4062\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"87.1,112.0 113.9,109.5 129.0,140.3\" fill=\"#2e4364\" stroke=\"#2e4364\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"87.1,112.0 129.0,140.3 86.3,145.5\" fill=\"#2d4062\" stroke=\"#2d4062\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"113.9,109.5 160.6,115.5 164.7,145.9\" fill=\"#2d4162\" stroke=\"#2d4162\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"113.9,109.5 164.7,145.9 129.0,140.3\" fill=\"#2e4164\" stroke=\"#2e4164\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"160.6,115.5 205.5,103.8 201.9,143.1\" fill=\"#334a70\" stroke=\"#334a70\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"160.6,115.5 201.9,143.1 164.7,145.9\" fill=\"#2e4265\" stroke=\"#2e4265\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"205.5,103.8 251.5,100.4 248.2,152.9\" fill=\"#2d4161\" stroke=\"#2d4161\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"205.5,103.8 248.2,152.9 201.9,143.1\" fill=\"#2a3d5d\" stroke=\"#2a3d5d\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"251.5,100.4 278.0,113.1 279.4,147.3\" fill=\"#364e74\" stroke=\"#364e74\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"251.5,100.4 279.4,147.3 248.2,152.9\" fill=\"#2c3e60\" stroke=\"#2c3e60\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"278.0,113.1 320.0,101.0 320.0,135.2\" fill=\"#f87050\" stroke=\"#f87050\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"278.0,113.1 320.0,135.2 279.4,147.3\" fill=\"#2c3f60\" stroke=\"#2c3f60\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"0.0,143.8 28.9,147.4 44.8,180.0\" fill=\"#29395d\" stroke=\"#29395d\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"0.0,143.8 44.8,180.0 0.0,180.0\" fill=\"#1e2945\" stroke=\"#1e2945\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"28.9,147.4 86.3,145.5 83.5,180.0\" fill=\"#222f4d\" stroke=\"#222f4d\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"28.9,147.4 83.5,180.0 44.8,180.0\" fill=\"#202b49\" stroke=\"#202b49\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"86.3,145.5 129.0,140.3 131.8,180.0\" fill=\"#263556\" stroke=\"#263556\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"86.3,145.5 131.8,180.0 83.5,180.0\" fill=\"#243152\" stroke=\"#243152\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"129.0,140.3 164.7,145.9 167.7,180.0\" fill=\"#29395c\" stroke=\"#29395c\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"129.0,140.3 167.7,180.0 131.8,180.0\" fill=\"#243153\" stroke=\"#243153\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"164.7,145.9 201.9,143.1 194.8,180.0\" fill=\"#28375a\" stroke=\"#28375a\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"164.7,145.9 194.8,180.0 167.7,180.0\" fill=\"#243254\" stroke=\"#243254\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"201.9,143.1 248.2,152.9 237.3,180.0\" fill=\"#263557\" stroke=\"#263557\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"201.9,143.1 237.3,180.0 194.8,180.0\" fill=\"#243254\" stroke=\"#243254\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"248.2,152.9 279.4,147.3 284.0,180.0\" fill=\"#263557\" stroke=\"#263557\" stroke-width=\".6\"/><polygon class=\"lp3\" points=\"248.2,152.9 284.0,180.0 237.3,180.0\" fill=\"#1d2843\" stroke=\"#1d2843\" stroke-width=\".6\"/><polygon class=\"lp2\" points=\"279.4,147.3 320.0,135.2 320.0,180.0\" fill=\"#253352\" stroke=\"#253352\" stroke-width=\".6\"/><polygon class=\"lp1\" points=\"279.4,147.3 320.0,180.0 284.0,180.0\" fill=\"#233050\" stroke=\"#233050\" stroke-width=\".6\"/><polygon class=\"lp-sun\" points=\"255.3,51.2 241.2,65.3 221.9,60.1 216.7,40.8 230.8,26.7 250.1,31.9\" fill=\"#ffd166\"/></svg>"
+		},
+		{
+			"slug": "wire",
+			"category": "depth",
+			"base": 6,
+			"name": "Wireframe hologram",
+			"aka": "Holographic, HUD, sci-fi wireframe",
+			"desc": "Glowing outlines with see-through faces over a scrolling grid. Reads as futuristic or technical.",
+			"prompt": "holographic wireframe cube, glowing cyan lines, scanlines, grid floor, sci-fi HUD",
+			"html": "<div class=\"wf-floor\"></div><div class=\"wf-scene\"><div class=\"wf-cube\"><div class=\"wf-face fz1\"></div><div class=\"wf-face fz2\"></div><div class=\"wf-face fz3\"></div><div class=\"wf-face fz4\"></div><div class=\"wf-face fz5\"></div><div class=\"wf-face fz6\"></div></div></div><div class=\"wf-scan\"></div>"
+		},
+		{
+			"slug": "cel",
+			"category": "depth",
+			"base": 0.9,
+			"name": "Cel-shaded / anime",
+			"aka": "Toon shading, speed lines, impact frame",
+			"desc": "Hard-edged light and shadow with no soft blending, often with radiating speed lines behind a moment of impact.",
+			"prompt": "cel-shaded anime style, hard shadows, radial speed lines, impact frame",
+			"html": "<div class=\"cel-lines\"></div><i class=\"cel-ball\"></i>"
+		},
+		{
+			"slug": "glass",
+			"category": "texture",
+			"base": 6,
+			"name": "Glassmorphism",
+			"aka": "Frosted glass",
+			"desc": "See-through panels that blur whatever moves behind them, with a thin bright edge. Feels modern and app-like.",
+			"prompt": "glassmorphism, frosted glass card over moving colorful blobs",
+			"html": "<i class=\"blob b1\"></i><i class=\"blob b2\"></i><i class=\"blob b3\"></i><i class=\"pane\"><b style=\"width:55%\"></b><b style=\"width:85%\"></b><b style=\"width:40%\"></b></i>"
+		},
+		{
+			"slug": "neon",
+			"category": "texture",
+			"base": 3,
+			"name": "Neon glow",
+			"aka": "Neon sign, synthwave glow",
+			"desc": "Bright glowing lines and lettering on a dark background, often with a slight flicker.",
+			"prompt": "neon sign style, glowing pink and cyan tubes, subtle flicker, dark background",
+			"html": "<i class=\"tube\"></i><i class=\"word\">GLOW</i>"
+		},
+		{
+			"slug": "aurora",
+			"category": "texture",
+			"base": 9,
+			"name": "Aurora gradient",
+			"aka": "Mesh gradient, blurred blobs",
+			"desc": "Large, blurry fields of color drifting slowly into each other. Calm and ambient, and often used behind titles.",
+			"prompt": "slow-moving aurora mesh gradient, teal, violet and pink, soft blur",
+			"html": "<i class=\"au a1\"></i><i class=\"au a2\"></i><i class=\"au a3\"></i>"
+		},
+		{
+			"slug": "grain",
+			"category": "texture",
+			"base": 8,
+			"name": "Grainy gradient",
+			"aka": "Noise texture, film grain",
+			"desc": "Smooth, shifting color gradients with a layer of fine noise on top. The grain makes digital art feel printed and tactile.",
+			"prompt": "grainy gradient background, warm colors, subtle film grain texture",
+			"html": "<i class=\"bgf\"></i><i class=\"orb\"></i><i class=\"noise\"></i>"
+		},
+		{
+			"slug": "duo",
+			"category": "texture",
+			"base": 6,
+			"cls": "cam c-pan",
+			"name": "Duotone",
+			"aka": "Two-tone, gradient map",
+			"desc": "Footage or images mapped to just two colors: one for the shadows and one for the highlights.",
+			"prompt": "duotone color grade, deep navy shadows and coral highlights",
+			"html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"duo\" color-interpolation-filters=\"sRGB\"><feColorMatrix type=\"matrix\" values=\".33 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 0 0 0 1 0\"/><feComponentTransfer><feFuncR type=\"table\" tableValues=\"0.11 1\"/><feFuncG type=\"table\" tableValues=\"0.09 0.42\"/><feFuncB type=\"table\" tableValues=\"0.33 0.45\"/></feComponentTransfer></filter></svg><div class=\"scene day duo\"><div class=\"layer bg\"><div class=\"sky\"></div><div class=\"sun\"></div><div class=\"mtn\"></div><div class=\"bird\"></div></div>\n<div class=\"layer mid\"><div class=\"hill\"></div></div>\n<div class=\"layer subj\"><div class=\"person\"></div></div>\n<div class=\"layer fg\"><div class=\"tree\"></div></div></div>"
+		},
+		{
+			"slug": "goo",
+			"category": "texture",
+			"base": 4,
+			"name": "Liquid / gooey",
+			"aka": "Metaballs, blob morph",
+			"desc": "Soft shapes that stretch and merge like liquid when they touch, then pull apart again.",
+			"prompt": "gooey liquid blobs that merge and split, smooth fluid motion",
+			"html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"goo\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"8\"/><feColorMatrix values=\"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10\"/></filter></svg><div class=\"goo\"><i class=\"g g1\"></i><i class=\"g g2\"></i><i class=\"g g3\"></i></div>"
+		},
+		{
+			"slug": "wc",
+			"category": "texture",
+			"base": 6,
+			"name": "Watercolor",
+			"aka": "Painterly, wet paint, ink bleed",
+			"desc": "Soft, see-through paint with rough edges that bleeds and blooms on textured paper.",
+			"prompt": "watercolor animation, soft paint blooms bleeding on textured paper, translucent overlapping colors",
+			"html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"wc\"><feTurbulence type=\"fractalNoise\" baseFrequency=\".025\" numOctaves=\"3\" result=\"n\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"n\" scale=\"22\"/><feGaussianBlur stdDeviation=\"1.2\"/></filter></svg><div class=\"wc\"><i class=\"wcb w1\"></i><i class=\"wcb w2\"></i><i class=\"wcb w3\"></i></div><i class=\"noise\" style=\"mix-blend-mode:multiply;opacity:.18\"></i>"
+		},
+		{
+			"slug": "y2k",
+			"category": "texture",
+			"base": 4,
+			"name": "Y2K chrome",
+			"aka": "Liquid chrome, millennium aesthetic",
+			"desc": "Shiny chrome lettering and blobs, sparkles and icy pastel backgrounds, inspired by design around the year 2000.",
+			"prompt": "Y2K aesthetic, liquid chrome 3D text, sparkles, icy lilac gradient background",
+			"html": "<i class=\"y-orb\"></i><i class=\"y-text\">Y2K</i><i class=\"spk\" style=\"left:40%;top:14%\"></i><i class=\"spk\" style=\"left:84%;top:12%;animation-delay:-.6s\"></i><i class=\"spk\" style=\"left:52%;top:74%;animation-delay:-1.2s\"></i>"
+		},
+		{
+			"slug": "line",
+			"category": "drawn",
+			"base": 4,
+			"name": "Line art",
+			"aka": "Outline, monoline, stroke reveal",
+			"desc": "Shapes made only of strokes. The lines often draw themselves on over time, which is called a stroke reveal or line draw.",
+			"prompt": "minimal black line art that draws itself on, white background",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M20 140 L90 70 L130 110 L180 50 L250 120 L300 90\"/><circle class=\"l2\" pathLength=\"1\" cx=\"245\" cy=\"48\" r=\"18\"/><path class=\"l3\" pathLength=\"1\" d=\"M10 152 H310\"/><path class=\"l2\" pathLength=\"1\" d=\"M60 45 q8 -8 16 0 q8 -8 16 0\"/></svg>"
+		},
+		{
+			"slug": "tech",
+			"category": "drawn",
+			"base": 5,
+			"name": "Technical drawing",
+			"aka": "Engineering drawing, spec sheet, annotated diagram",
+			"desc": "Thin, even lines on white with dimension lines, callouts, dashed construction guides and hatched fills. Lines draw on first, then the labels appear.",
+			"prompt": "technical drawing style, thin monoline strokes on white, dimension lines and callouts, dashed construction guides, hatched fills",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" aria-hidden=\"true\"><defs><pattern id=\"td-hatch\" width=\"5\" height=\"5\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"5\" stroke=\"#a3a3a3\" stroke-width=\"1\"/></pattern><clipPath id=\"td-clip\"><circle cx=\"110\" cy=\"92\" r=\"58\"/></clipPath></defs>\n<g class=\"td-fade\"><path class=\"td-guide\" d=\"M36 92 H184 M110 22 V164\"/><polygon points=\"99.0,111.1 124.2,166.1 52.9,141.3 88.0,92.0\" fill=\"url(#td-hatch)\" clip-path=\"url(#td-clip)\"/></g>\n<circle class=\"td-d\" pathLength=\"1\" cx=\"110\" cy=\"92\" r=\"58\"/><polygon class=\"td-d l2\" pathLength=\"1\" points=\"132.0,92.0 121.0,111.1 99.0,111.1 88.0,92.0 99.0,72.9 121.0,72.9\"/><path class=\"td-d l3\" pathLength=\"1\" d=\"M132.0 92.0 L153.9 54.1 M121.0 111.1 L164.8 111.1 M99.0 111.1 L120.9 149.0 M88.0 92.0 L66.1 129.9 M99.0 72.9 L55.2 72.9 M121.0 72.9 L99.1 35.0\"/>\n<g class=\"td-fade td-anno\"><path d=\"M52 18 V30 M168 18 V30 M52 24 H98 M122 24 H168 M52 24 l5 -3 M52 24 l5 3 M168 24 l-5 -3 M168 24 l-5 3\"/><text x=\"110\" y=\"27\" text-anchor=\"middle\">6u</text>\n<path d=\"M120 82 L152 54 H188\"/><text class=\"td-lbl\" x=\"192\" y=\"57\">Aperture</text>\n<path d=\"M99.6 111.6 L56 140 H48\"/><text class=\"td-lbl\" x=\"4\" y=\"143\">Blade 01</text>\n<text class=\"td-id\" x=\"206\" y=\"164\">EC-01</text><text class=\"td-lbl\" x=\"240\" y=\"164\">Six blades</text></g></svg>"
+		},
+		{
+			"slug": "bp",
+			"category": "drawn",
+			"base": 5,
+			"name": "Blueprint",
+			"aka": "Architectural drafting, cyanotype",
+			"desc": "White linework on a blue grid, like an architect's plan. Good for showing how something is built.",
+			"prompt": "blueprint style, white line drawing on blue grid paper, floor plan that draws itself, drafting labels",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" aria-hidden=\"true\">\n<rect class=\"bp-d\" pathLength=\"1\" x=\"40\" y=\"30\" width=\"240\" height=\"120\"/>\n<path class=\"bp-d l2\" pathLength=\"1\" d=\"M160 30 V100 M160 120 V150 M40 95 H120 M140 95 H160\"/>\n<path class=\"bp-d l3\" pathLength=\"1\" d=\"M120 95 V115 A20 20 0 0 0 140 95 M160 100 H180 A20 20 0 0 1 160 120\"/>\n<g class=\"bp-fade\"><path d=\"M40 16 H280 M40 12 V20 M280 12 V20\"/><text x=\"160\" y=\"13\" text-anchor=\"middle\">12.40 m</text>\n<text x=\"80\" y=\"66\" text-anchor=\"middle\">BED</text><text x=\"100\" y=\"128\" text-anchor=\"middle\">LIVING</text><text x=\"220\" y=\"94\" text-anchor=\"middle\">KITCHEN</text>\n<rect x=\"226\" y=\"156\" width=\"54\" height=\"16\" class=\"bp-tb\"/><text x=\"253\" y=\"167\" text-anchor=\"middle\">PLAN A-1</text></g></svg>"
+		},
+		{
+			"slug": "sketch",
+			"category": "drawn",
+			"base": 0.45,
+			"name": "Hand-drawn",
+			"aka": "Sketchy, doodle, boiling line",
+			"desc": "Wobbly, imperfect lines that jitter a little every few frames, as if each frame were redrawn by hand. That jitter is called a boiling line.",
+			"prompt": "hand-drawn doodle animation, pencil lines on ruled paper, boiling line jitter, marker fill",
+			"html": "<svg class=\"fill\" viewBox=\"0 0 320 180\" aria-hidden=\"true\"><g class=\"sk-v sk0\"><polyline points=\"210.7,59.8 215.5,60.7 217.8,72.2 220.6,47.7 220.5,43.7 222.9,77.7 228.6,77.2 228.8,43.2 230.9,41.0 233.4,77.3 237.5,78.3 238.5,45.1 242.2,48.0 245.6,72.2 247.5,64.6 247.7,53.7\" class=\"sk-fill\"/><path d=\"M19.0 150.2 L27.0 151.2 L39.8 149.1 L48.2 150.5 L60.0 148.7 L68.9 151.7 L79.2 150.8 L90.0 150.0 L98.4 150.3 L109.4 149.4 L120.7 149.5 L129.5 150.9 L140.8 151.4 L150.4 149.1 L161.3 151.5 L170.9 151.0 L180.3 150.0 L190.7 148.7 L201.2 151.3 L209.5 150.9 L221.6 148.6 L229.4 150.3 L240.1 149.3 L251.7 150.5 L262.3 150.2 L271.0 148.2 L280.3 148.9 L291.9 150.8 L301.0 149.6 M61.6 149.6 L60.8 138.4 L60.6 125.9 L60.2 114.7 L58.8 103.1 L71.3 100.4 L78.9 101.1 L88.5 100.7 L100.5 100.6 L108.4 103.6 L119.6 102.1 L119.9 113.4 L119.8 124.9 L120.3 137.1 L118.7 149.0 M51.7 105.5 L60.0 98.9 L66.8 89.5 L75.6 82.5 L84.2 76.4 L89.2 69.2 L96.9 78.4 L107.0 83.8 L111.8 88.6 L118.9 96.5 L128.5 104.5 M83.3 151.2 L81.5 137.6 L81.8 124.8 L96.9 125.7 L96.3 137.4 L97.5 151.1 M250.7 61.4 L248.3 69.8 L245.5 76.4 L235.6 80.5 L227.5 80.8 L217.8 80.3 L212.4 72.1 L208.9 65.1 L207.2 55.7 L212.5 45.7 L218.3 42.3 L228.0 37.1 L236.4 38.9 L245.5 44.9 L248.6 49.4 L251.8 58.3 M256.8 58.6 L266.5 60.5 M248.3 80.0 L258.5 85.6 M230.9 88.3 L228.8 99.6 M211.1 79.4 L204.5 85.4 M203.2 61.2 L190.6 61.5 M211.2 41.7 L202.3 34.0 M231.0 31.5 L228.3 20.3 M249.8 40.4 L255.5 33.6\"/></g><g class=\"sk-v sk1\"><polyline points=\"212.3,58.9 216.2,61.5 216.9,73.0 218.5,46.5 221.2,44.6 223.5,77.8 225.5,76.6 228.0,43.2 231.5,42.0 233.9,78.4 236.7,75.5 239.2,42.7 240.6,47.7 245.1,74.0 248.4,65.5 249.1,53.8\" class=\"sk-fill\"/><path d=\"M17.7 150.6 L26.4 149.9 L38.4 149.4 L46.7 150.7 L56.8 150.2 L67.5 148.3 L77.7 148.4 L87.7 150.7 L100.0 149.5 L109.8 149.9 L119.4 151.4 L128.9 151.3 L140.4 150.7 L148.1 148.5 L158.3 149.4 L171.7 151.4 L181.5 148.6 L191.2 151.0 L201.7 151.1 L209.4 148.8 L221.9 150.9 L232.4 149.8 L242.5 148.7 L252.9 151.4 L260.8 148.4 L271.7 150.7 L281.2 148.4 L291.1 151.2 L300.5 151.6 M59.1 148.9 L58.6 139.7 L61.4 125.3 L58.5 114.6 L61.4 100.2 L70.5 103.3 L79.9 102.2 L91.1 101.1 L99.2 102.6 L110.2 102.1 L119.4 103.6 L119.2 114.6 L121.4 125.6 L118.4 137.0 L118.4 148.7 M50.6 103.4 L59.1 97.0 L67.8 91.0 L75.5 83.1 L83.0 77.0 L88.7 70.2 L96.9 77.4 L106.0 82.7 L112.6 90.2 L119.7 95.5 L126.4 105.8 M82.9 149.8 L82.6 136.2 L82.8 125.6 L99.0 123.9 L99.7 138.5 L96.4 149.7 M251.8 59.2 L250.5 67.7 L245.6 77.6 L235.2 81.6 L226.9 82.4 L219.7 80.8 L213.3 72.4 L209.3 63.3 L209.2 55.1 L211.4 46.1 L218.0 42.0 L226.2 37.2 L235.7 37.8 L245.5 44.0 L250.7 52.5 L251.8 58.3 M256.9 60.1 L268.8 61.5 M249.8 78.8 L257.2 88.4 M229.4 89.6 L231.5 98.3 M210.1 78.5 L201.7 85.2 M202.4 60.8 L193.8 60.4 M212.0 39.9 L201.8 31.5 M229.2 32.1 L231.8 21.3 M248.8 41.0 L256.5 33.3\"/></g><g class=\"sk-v sk2\"><polyline points=\"210.7,60.4 213.3,60.8 217.4,72.0 219.9,47.8 220.4,44.0 224.9,76.2 228.4,78.6 229.1,41.3 230.7,43.2 235.2,78.3 236.8,76.6 238.5,43.5 240.7,47.0 245.0,74.0 246.1,64.4 248.9,54.8\" class=\"sk-fill\"/><path d=\"M18.0 150.9 L27.9 149.6 L39.8 148.8 L47.4 150.3 L59.0 149.8 L68.9 149.8 L79.5 151.4 L90.2 150.5 L99.0 151.6 L109.1 150.5 L120.8 150.7 L129.2 150.9 L140.1 151.5 L150.3 150.1 L161.7 150.1 L169.8 151.6 L181.9 148.8 L188.9 151.3 L201.9 149.6 L209.8 150.7 L222.4 149.0 L230.8 150.6 L240.1 149.7 L250.0 149.9 L260.5 148.5 L271.2 148.7 L280.3 148.7 L291.6 149.3 L302.8 149.7 M59.1 148.9 L59.3 138.9 L58.9 125.9 L61.1 115.2 L59.9 103.2 L70.5 101.0 L78.5 100.8 L91.0 101.6 L101.2 103.7 L111.5 101.9 L118.2 101.2 L119.0 114.5 L120.7 127.5 L120.7 139.7 L120.5 149.9 M53.2 103.2 L60.6 98.0 L68.5 88.8 L73.7 85.2 L81.1 76.6 L90.4 69.9 L99.0 78.4 L104.6 82.3 L114.3 90.2 L119.5 95.9 L126.2 104.3 M81.2 150.2 L83.5 136.9 L83.6 122.4 L98.9 124.9 L99.7 135.3 L98.0 150.2 M252.4 59.9 L249.3 70.4 L246.1 77.1 L238.5 81.1 L226.2 82.6 L217.6 80.0 L212.7 71.9 L207.2 63.0 L207.3 57.1 L211.2 48.5 L217.7 40.4 L227.6 37.6 L238.5 38.1 L244.7 42.6 L248.7 51.7 L251.4 60.0 M258.7 58.5 L266.4 60.7 M251.6 78.1 L256.7 88.7 M231.2 89.8 L230.1 99.7 M208.6 79.7 L204.4 86.5 M201.8 59.8 L191.6 61.1 M211.9 39.2 L202.5 34.2 M230.9 33.1 L230.7 23.5 M251.0 40.7 L256.1 31.6\"/></g></svg>"
+		},
+		{
+			"slug": "pixel",
+			"category": "retro",
+			"base": 2,
+			"name": "Pixel art",
+			"aka": "8-bit, retro game",
+			"desc": "Chunky square pixels and choppy, frame-by-frame movement, like old video games.",
+			"prompt": "8-bit pixel art animation, limited palette, choppy stepped motion",
+			"html": "<i class=\"px-star\" style=\"left:12%;top:14%\"></i><i class=\"px-star\" style=\"left:34%;top:26%;--m:.7\"></i><i class=\"px-star\" style=\"left:58%;top:10%\"></i><i class=\"px-star\" style=\"left:86%;top:18%;--m:.8\"></i><i class=\"px-coin\"></i><i class=\"px-ground\"></i><i class=\"px-walker\"><i class=\"px-sprite\" style=\"box-shadow:18px 6px 0 #ff5d8f,24px 6px 0 #ff5d8f,30px 6px 0 #ff5d8f,36px 6px 0 #ff5d8f,12px 12px 0 #ff5d8f,18px 12px 0 #ff5d8f,24px 12px 0 #ff5d8f,30px 12px 0 #ff5d8f,36px 12px 0 #ff5d8f,42px 12px 0 #ff5d8f,6px 18px 0 #ff5d8f,12px 18px 0 #ff5d8f,18px 18px 0 #1b1f3b,24px 18px 0 #ff5d8f,30px 18px 0 #ff5d8f,36px 18px 0 #1b1f3b,42px 18px 0 #ff5d8f,48px 18px 0 #ff5d8f,6px 24px 0 #ff5d8f,12px 24px 0 #ff5d8f,18px 24px 0 #1b1f3b,24px 24px 0 #ff5d8f,30px 24px 0 #ff5d8f,36px 24px 0 #1b1f3b,42px 24px 0 #ff5d8f,48px 24px 0 #ff5d8f,6px 30px 0 #ff5d8f,12px 30px 0 #ff5d8f,18px 30px 0 #ff5d8f,24px 30px 0 #ff5d8f,30px 30px 0 #ff5d8f,36px 30px 0 #ff5d8f,42px 30px 0 #ff5d8f,48px 30px 0 #ff5d8f,6px 36px 0 #ff5d8f,12px 36px 0 #ff5d8f,18px 36px 0 #ff5d8f,24px 36px 0 #ff5d8f,30px 36px 0 #ff5d8f,36px 36px 0 #ff5d8f,42px 36px 0 #ff5d8f,48px 36px 0 #ff5d8f,6px 42px 0 #ff5d8f,12px 42px 0 #ff5d8f,24px 42px 0 #ff5d8f,30px 42px 0 #ff5d8f,42px 42px 0 #ff5d8f,48px 42px 0 #ff5d8f,6px 48px 0 #ff5d8f,24px 48px 0 #ff5d8f,42px 48px 0 #ff5d8f\"></i></i>"
+		},
+		{
+			"slug": "synth",
+			"category": "retro",
+			"base": 1,
+			"name": "Synthwave",
+			"aka": "Retrowave, outrun, 80s neon",
+			"desc": "A striped sunset sun, purple mountains and a neon grid racing toward the viewer.",
+			"prompt": "synthwave retrowave scene, striped neon sunset, purple mountains, glowing grid floor scrolling forward",
+			"html": "<i class=\"sw-sun\"></i><i class=\"sw-mtn\"></i><div class=\"sw-floor\"></div><i class=\"sw-hz\"></i>"
+		},
+		{
+			"slug": "vhs",
+			"category": "retro",
+			"base": 2.5,
+			"name": "VHS / analog",
+			"aka": "Retro tape, lo-fi video, camcorder",
+			"desc": "Washed-out color, scanlines, a rolling tracking band and a jittery picture, with on-screen text like an old tape player.",
+			"prompt": "VHS tape aesthetic, scanlines, tracking noise, chromatic aberration, PLAY timestamp overlay",
+			"html": "<div class=\"scene day\"><div class=\"layer bg\"><div class=\"sky\"></div><div class=\"sun\"></div><div class=\"mtn\"></div><div class=\"bird\"></div></div>\n<div class=\"layer mid\"><div class=\"hill\"></div></div>\n<div class=\"layer subj\"><div class=\"person\"></div></div>\n<div class=\"layer fg\"><div class=\"tree\"></div></div></div><div class=\"vhs-band\"></div><div class=\"vhs-scan\"></div><span class=\"abs osd o1\">PLAY ▶</span><span class=\"abs osd o2\">SP 0:12:07</span>"
+		},
+		{
+			"slug": "term",
+			"category": "retro",
+			"base": 6,
+			"name": "Terminal / code",
+			"aka": "Hacker, command line, typewriter text",
+			"desc": "Monospaced green text typing out line by line with a blinking cursor, like a computer terminal.",
+			"prompt": "terminal style animation, green monospace text typing line by line, blinking cursor, dark background",
+			"html": "<div class=\"tm\"><span class=\"ln t0\">$ render --style motion</span><span class=\"ln t1\">> compiling 240 frames</span><span class=\"ln t2\">> [##########] 100%</span><span class=\"ln t3\">OK done in 3.2s</span><span class=\"cur\"></span></div>"
+		},
+		{
+			"slug": "dither",
+			"category": "retro",
+			"base": 1,
+			"name": "1-bit dither",
+			"aka": "Dithered, Bayer pattern, Mac Classic",
+			"desc": "Only two colors. Shading comes from patterns of dots, like old black-and-white computer screens.",
+			"prompt": "1-bit dithered animation, black and white only, ordered dither shading, bouncing sphere",
+			"html": "<canvas class=\"cv\" data-kind=\"dither\" width=\"160\" height=\"90\"></canvas>"
+		},
+		{
+			"slug": "led",
+			"category": "retro",
+			"base": 1,
+			"name": "LED dot matrix",
+			"aka": "Marquee, scrolling sign, departure board",
+			"desc": "Text built from a grid of glowing dots that scrolls across, like a train station sign.",
+			"prompt": "LED dot matrix display, scrolling amber text, glowing dots on black",
+			"html": "<canvas class=\"cv\" data-kind=\"led\" width=\"320\" height=\"90\"></canvas>"
+		},
+		{
+			"slug": "riso",
+			"category": "retro",
+			"base": 1.2,
+			"name": "Risograph",
+			"aka": "Halftone print, misregistration",
+			"desc": "A printed look with dot patterns, overlapping inks and colors that sit slightly out of line with each other.",
+			"prompt": "risograph print style, pink and blue halftone, slight misregistration, paper grain",
+			"html": "<i class=\"riso r3\"></i><i class=\"riso r1\"></i><i class=\"riso r2\"></i><i class=\"rt\">PRINT</i><i class=\"noise\" style=\"mix-blend-mode:multiply;opacity:.25\"></i>"
+		},
+		{
+			"slug": "stop",
+			"category": "retro",
+			"base": 2.4,
+			"name": "Stop motion",
+			"aka": "Claymation, frame-by-frame",
+			"desc": "Physical-looking objects moved a little between photographed frames. The low frame rate and tiny wobble are the charm.",
+			"prompt": "stop motion claymation, 12 fps, slight frame jitter, handmade clay character on a wooden table",
+			"html": "<div class=\"sm-frame\"><i class=\"sm-table\"></i><i class=\"sm-walker\"><i class=\"sm-body\"></i></i></div><span class=\"abs fps\">12 fps</span>"
+		},
+		{
+			"slug": "kin",
+			"category": "typeui",
+			"base": 2.6,
+			"name": "Kinetic typography",
+			"aka": "Animated type, text motion",
+			"desc": "The words are the main visual. Letters rise, slide or bounce in, often timed to music or a voiceover.",
+			"prompt": "bold kinetic typography, letters rise in with staggered timing",
+			"html": "<div class=\"kin\"><span style=\"--i:0\">M</span><span style=\"--i:1\">O</span><span style=\"--i:2\">V</span><span style=\"--i:3\">E</span><span style=\"--i:4\"> </span><span style=\"--i:5\">I</span><span style=\"--i:6\">T</span><i class=\"kbar\"></i></div>"
+		},
+		{
+			"slug": "ui",
+			"category": "typeui",
+			"base": 4,
+			"name": "UI motion",
+			"aka": "Product animation, interface micro-interactions",
+			"desc": "App screens come alive: list rows slide in one after another, a cursor clicks and a toggle switches on.",
+			"prompt": "product UI motion, card list items slide in with stagger, cursor clicks toggle, smooth easing, soft shadows",
+			"html": "<div class=\"ui-card\"><div class=\"ui-row\" style=\"--i:0\"><span class=\"av\" style=\"background:#60a5fa\"></span><span class=\"bars\"><b></b><b></b></span><span class=\"tg\"><span class=\"kn\"></span><svg class=\"cursor\" viewBox=\"0 0 14 20\" aria-hidden=\"true\"><path d=\"M1 1 L1 16 L5 12 L8 19 L10.5 18 L7.5 11 L13 11 Z\" fill=\"#111\" stroke=\"#fff\" stroke-width=\"1.2\"/></svg></span></div><div class=\"ui-row\" style=\"--i:1\"><span class=\"av\" style=\"background:#f472b6\"></span><span class=\"bars\"><b></b><b></b></span></div><div class=\"ui-row\" style=\"--i:2\"><span class=\"av\" style=\"background:#34d399\"></span><span class=\"bars\"><b></b><b></b></span></div></div>"
+		},
+		{
+			"slug": "dv",
+			"category": "typeui",
+			"base": 4,
+			"name": "Data motion",
+			"aka": "Infographic animation, animated charts",
+			"desc": "Charts that build themselves: bars grow in sequence and a trend line draws across them before the key number appears.",
+			"prompt": "infographic data animation, bar chart grows in staggered sequence, trend line draws on, highlight the final value",
+			"html": "<div class=\"dv-chart\"><span class=\"dv-bar\" style=\"--h:30%;--i:0\"></span><span class=\"dv-bar\" style=\"--h:45%;--i:1\"></span><span class=\"dv-bar\" style=\"--h:38%;--i:2\"></span><span class=\"dv-bar\" style=\"--h:60%;--i:3\"></span><span class=\"dv-bar\" style=\"--h:52%;--i:4\"></span><span class=\"dv-bar\" style=\"--h:80%;--i:5\"></span></div><svg class=\"dv-line\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M6.25 70 L23.75 55 L41.25 62 L58.75 40 L76.25 48 L93.75 20\"/></svg><span class=\"abs dv-lbl\">+38%</span>"
+		}
+	]
+}
