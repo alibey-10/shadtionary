@@ -110,3 +110,19 @@ _Avoid_: Entry article structure, custom section names
 
 > **Dev:** "Should the accordion thumbnail be clickable so users can expand items?"
 > **Domain expert:** "No — placeholders are read-only snapshots at every size. Listing cards and entry previews both use the same non-interactive component."
+
+**Style**:
+A named visual look for animated or video output (e.g. Glassmorphism, Pixel art), listed on the `/styles` page and stored in `styles.json` (ADR-0007). Not an Entry: it has no slug page or markdown body.
+_Avoid_: Theme, filter, preset
+
+**Style preview**:
+The looping, read-only animation on a **Style card**, rendered by `StyleStage` and scoped under `.sty`. Its colors are fixed and do not follow the site theme.
+_Avoid_: Thumbnail placeholder, demo
+
+**Style prompt**:
+The short, copyable phrase on a **Style card** that a reader pastes into an AI animation or video tool.
+_Avoid_: Description, caption
+
+**Style card**:
+One Style on the `/styles` page: **Style preview**, name, "Also called" names, description and **Style prompt**. Grouped by category.
+_Avoid_: Entry card, listing card

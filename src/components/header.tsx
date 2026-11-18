@@ -39,6 +39,14 @@ export function Header({ className }: HeaderProps) {
 					>
 						Comparisons
 					</Button>
+					<Button
+						variant="ghost"
+						size="sm"
+						nativeButton={false}
+						render={(props) => <Link {...props} to="/styles" />}
+					>
+						Styles
+					</Button>
 					<ThemeToggle />
 					<Button
 						variant="ghost"
