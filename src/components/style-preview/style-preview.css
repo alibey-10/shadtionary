@@ -4,8 +4,6 @@
  * prefixed with `ms-` so nothing leaks into the rest of the site.
  * Scene colors are fixed on purpose: they depict footage, not UI chrome.
  */
-.style-previews{--rate:1}
-.style-previews[data-paused="true"] .sty,.style-previews[data-paused="true"] .sty *{animation-play-state:paused !important}
 .sty{position:relative;aspect-ratio:16/9;overflow:hidden;isolation:isolate;background:#0b0d12;--font-display:var(--font-sans);--font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .sty .scene,.sty .shot{position:absolute;inset:0;overflow:hidden}
 .sty .layer{position:absolute;inset:0}

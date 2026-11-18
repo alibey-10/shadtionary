@@ -126,3 +126,11 @@ _Avoid_: Description, caption
 **Style card**:
 One Style on the `/styles` page: **Style preview**, name, "Also called" names, description and **Style prompt**. Grouped by category.
 _Avoid_: Entry card, listing card
+
+**Transition**:
+A named way one web page, view or state hands off to the next (e.g. Crossfade, Shared element), listed on the `/transitions` page and stored in `transitions.json` (ADR-0008). Web-only: video-edit transitions are out of scope.
+_Avoid_: Animation, effect, cut
+
+**Transition preview**:
+The looping, read-only animation on a Transition card, showing a list view (A) changing into a detail view (B) and back, drawn in **Abstract chrome** with theme colors.
+_Avoid_: Demo, Style preview
