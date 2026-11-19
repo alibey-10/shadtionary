@@ -13,6 +13,11 @@ import appCss from "../styles.css?url";
 const siteDescription =
 	"A visual dictionary of UI components. Learn the names of UI elements and their parts, so you can steer AI agents with precise vocabulary.";
 
+const siteUrl = "https://shadtionary.com";
+const ogImageUrl = `${siteUrl}/og-image.png`;
+const ogImageAlt =
+	"Shadtionary — The Visual Dictionary for Web UI";
+
 export const Route = createRootRoute({
 	head: () => ({
 		meta: [
@@ -38,6 +43,21 @@ export const Route = createRootRoute({
 				property: "og:description",
 				content: siteDescription,
 			},
+			{ property: "og:type", content: "website" },
+			{ property: "og:url", content: siteUrl },
+			{ property: "og:site_name", content: "Shadtionary" },
+			{ property: "og:image", content: ogImageUrl },
+			{ property: "og:image:width", content: "1200" },
+			{ property: "og:image:height", content: "630" },
+			{ property: "og:image:type", content: "image/png" },
+			{ property: "og:image:alt", content: ogImageAlt },
+			{ name: "twitter:card", content: "summary_large_image" },
+			{ name: "twitter:site", content: "@alibey_10" },
+			{ name: "twitter:creator", content: "@alibey_10" },
+			{ name: "twitter:title", content: "Shadtionary" },
+			{ name: "twitter:description", content: siteDescription },
+			{ name: "twitter:image", content: ogImageUrl },
+			{ name: "twitter:image:alt", content: ogImageAlt },
 		],
 		links: [
 			{

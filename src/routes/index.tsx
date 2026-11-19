@@ -56,11 +56,10 @@ function Home() {
 				<header>
 					<div className="py-10 md:py-12 md:max-w-5xl px-4 md:px-8 border-x mx-auto border-dashed">
 						<h1 className="lg:text-4xl text-xl font-extrabold tracking-tight">
-							Visual Dictionary for UI Elements
+							The Visual Dictionary for Web UI
 						</h1>
 						<p className="mt-2 max-w-2xl text-lg text-muted-foreground text-pretty">
-							Great resource for vibe coders, designers and design engineers to
-							better steer AI agents in the right direction.
+							Covering components, styles, and transitions
 						</p>
 					</div>
 					<div className="border-y border-dashed">
