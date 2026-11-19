@@ -27,7 +27,23 @@ import {
 import entries from "@/contstants/data.json";
 import { urls } from "@/contstants/urls";
 
-export const Route = createFileRoute("/")({ component: Home });
+const title = "Shadtionary - The Visual Dictionary for Web UI";
+const description =
+	"The visual dictionary for web UI, covering components, styles, and transitions. Learn the right names so you can steer AI agents with precise vocabulary.";
+
+export const Route = createFileRoute("/")({
+	component: Home,
+	head: () => ({
+		meta: [
+			{ title },
+			{ name: "description", content: description },
+			{ property: "og:title", content: title },
+			{ property: "og:description", content: description },
+			{ name: "twitter:title", content: title },
+			{ name: "twitter:description", content: description },
+		],
+	}),
+});
 
 function matchesQuery(entry: (typeof entries)[number], query: string): boolean {
 	const haystack = [
