@@ -33,6 +33,7 @@ function TransitionsIndex() {
 			intro={`${transitions.length} transitions used on the web, for moving between pages, views and states. Each preview goes forward to the next view, then back.`}
 			categories={data.categories}
 			items={transitions}
+			noun={{ one: "transition", other: "transitions" }}
 			renderPreview={(item) => <TransitionStage item={item} />}
 		/>
 	);

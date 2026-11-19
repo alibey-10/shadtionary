@@ -1,14 +1,24 @@
 import {
+	Cancel01Icon,
 	Copy01Icon,
 	PauseIcon,
 	PlayIcon,
+	Search01Icon,
 	Tick02Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import * as React from "react";
 
+import { GithubCta } from "@/components/github-cta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import {
+	InputGroup,
+	InputGroupAddon,
+	InputGroupButton,
+	InputGroupInput,
+	InputGroupText,
+} from "@/components/ui/input-group";
 import { cn } from "@/lib/utils";
 
 export type GalleryItem = {
@@ -37,24 +47,41 @@ type MotionGalleryProps<T extends GalleryItem> = {
 	intro: React.ReactNode;
 	categories: GalleryCategory[];
 	items: T[];
+	/** Noun for the result count and placeholder, e.g. { one: "style", other: "styles" }. */
+	noun: { one: string; other: string };
 	renderPreview: (item: T, playback: Playback) => React.ReactNode;
 };
 
 const RATES = [0.5, 1, 2] as const;
 
+function matchesQuery(
+	item: GalleryItem,
+	category: GalleryCategory | undefined,
+	query: string,
+): boolean {
+	return [item.name, item.aka, item.desc, item.prompt, category?.name ?? ""]
+		.join(" ")
+		.toLowerCase()
+		.includes(query);
+}
+
 /**
- * Page layout shared by the Styles and Transitions pages: intro, a sticky
- * playback bar, then one bordered title row and card grid per category.
+ * Page layout shared by the Styles and Transitions pages: intro, a search bar,
+ * a sticky playback toolbar, then one bordered title row and card grid per
+ * category.
  */
 export function MotionGallery<T extends GalleryItem>({
 	title,
 	intro,
 	categories,
 	items,
+	noun,
 	renderPreview,
 }: MotionGalleryProps<T>) {
 	const [rate, setRate] = React.useState<number>(1);
 	const [paused, setPaused] = React.useState(false);
+	const [query, setQuery] = React.useState("");
+	const normalizedQuery = query.trim().toLowerCase();
 
 	React.useEffect(() => {
 		if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
@@ -62,8 +89,15 @@ export function MotionGallery<T extends GalleryItem>({
 		}
 	}, []);
 
+	const categoryById = new Map(categories.map((c) => [c.id, c]));
+	const filteredItems = normalizedQuery
+		? items.filter((item) =>
+				matchesQuery(item, categoryById.get(item.category), normalizedQuery),
+			)
+		: items;
+
 	const visible = categories.filter((c) =>
-		items.some((item) => item.category === c.id),
+		filteredItems.some((item) => item.category === c.id),
 	);
 
 	return (
@@ -77,50 +111,93 @@ export function MotionGallery<T extends GalleryItem>({
 						<p className="mt-2 max-w-2xl text-lg text-muted-foreground text-pretty">
 							{intro}
 						</p>
+						<GithubCta />
 					</div>
-					<div className="sticky top-14 z-40 border-y border-dashed bg-background/80 backdrop-blur-sm">
-						<div className="flex flex-wrap items-center justify-between gap-2 md:max-w-5xl mx-auto border-x border-dashed px-4 md:px-8 py-2">
-							<fieldset
-								aria-label="Playback speed"
-								className="flex items-center gap-1"
-							>
-								<span className="mr-1 text-sm text-muted-foreground">
-									Speed
-								</span>
-								{RATES.map((r) => (
-									<Button
-										key={r}
-										size="sm"
-										variant={rate === r ? "secondary" : "ghost"}
-										aria-pressed={rate === r}
-										onClick={() => setRate(r)}
-										className="tabular-nums"
+					<div className="border-t border-dashed">
+						<InputGroup className="h-12 px-1 md:max-w-5xl mx-auto rounded-none border-y-0 md:px-6 border-dashed border-border focus-within:bg-input/40 duration-75 has-[[data-slot=input-group-control]:focus-visible]:border-border has-[[data-slot=input-group-control]:focus-visible]:ring-0 dark:bg-transparent dark:focus-within:bg-input/40">
+							<InputGroupInput
+								type="text"
+								placeholder={`Search ${noun.other}...`}
+								className="h-full ml-1.5"
+								value={query}
+								onChange={(event) => setQuery(event.target.value)}
+								autoComplete="off"
+							/>
+							<InputGroupAddon>
+								<HugeiconsIcon icon={Search01Icon} className="size-4" />
+							</InputGroupAddon>
+							<InputGroupAddon align="inline-end" className="pr-1">
+								<InputGroupText className="tabular-nums">
+									{filteredItems.length}{" "}
+									{filteredItems.length === 1 ? noun.one : noun.other}
+								</InputGroupText>
+								{query ? (
+									<InputGroupButton
+										size="icon-sm"
+										aria-label="Clear search"
+										onClick={() => setQuery("")}
 									>
-										{r}×
-									</Button>
-								))}
-							</fieldset>
-							<Button
-								size="sm"
-								variant="outline"
-								onClick={() => setPaused((p) => !p)}
-							>
-								<HugeiconsIcon
-									icon={paused ? PlayIcon : PauseIcon}
-									className="size-4"
-								/>
-								{paused ? "Play all" : "Pause all"}
-							</Button>
-						</div>
+										<HugeiconsIcon icon={Cancel01Icon} className="size-4" />
+									</InputGroupButton>
+								) : null}
+							</InputGroupAddon>
+						</InputGroup>
 					</div>
 				</header>
+				<div className="sticky top-14 z-40 border-t border-dashed bg-background/80 backdrop-blur-sm">
+					<div
+						role="toolbar"
+						aria-label="Playback"
+						className="flex flex-wrap items-center gap-1 md:max-w-5xl mx-auto border-x border-b border-dashed px-4 md:px-8 py-2"
+					>
+						<fieldset
+							aria-label="Playback speed"
+							className="flex items-center gap-1"
+						>
+							<span className="mr-1 text-sm text-muted-foreground">Speed</span>
+							{RATES.map((r) => (
+								<Button
+									key={r}
+									size="sm"
+									variant={rate === r ? "secondary" : "ghost"}
+									aria-pressed={rate === r}
+									onClick={() => setRate(r)}
+									className="tabular-nums"
+								>
+									{r}×
+								</Button>
+							))}
+						</fieldset>
+						<span aria-hidden className="mx-2 h-5 w-px bg-border" />
+						<Button
+							size="sm"
+							variant="outline"
+							onClick={() => setPaused((p) => !p)}
+						>
+							<HugeiconsIcon
+								icon={paused ? PlayIcon : PauseIcon}
+								className="size-4"
+							/>
+							{paused ? "Play all" : "Pause all"}
+						</Button>
+					</div>
+				</div>
 				<section
 					className="motion-gallery flex w-full flex-1 flex-col"
 					data-paused={paused}
 					style={{ "--rate": rate } as React.CSSProperties}
 				>
+					{visible.length === 0 ? (
+						<div className="w-full flex-1 md:max-w-5xl mx-auto border-x border-dashed px-4 md:px-8 py-10">
+							<p className="text-center text-muted-foreground">
+								No {noun.other} match &ldquo;{query}&rdquo;.
+							</p>
+						</div>
+					) : null}
 					{visible.map((category, index) => {
-						const group = items.filter((s) => s.category === category.id);
+						const group = filteredItems.filter(
+							(s) => s.category === category.id,
+						);
 						const isLast = index === visible.length - 1;
 
 						return (

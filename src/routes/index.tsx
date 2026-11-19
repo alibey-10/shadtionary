@@ -7,6 +7,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import React, { useState } from "react";
+import { GithubCta } from "@/components/github-cta";
 import { LazyMount } from "@/components/lazy-mount";
 import { PreviewChrome } from "@/components/preview-chrome";
 import thumbnails from "@/components/thumbnails";
@@ -27,7 +28,23 @@ import {
 import entries from "@/contstants/data.json";
 import { urls } from "@/contstants/urls";
 
-export const Route = createFileRoute("/")({ component: Home });
+const title = "Shadtionary - The Visual Dictionary for Web UI";
+const description =
+	"The visual dictionary for web UI, covering components, styles, and transitions. Learn the right names so you can steer AI agents with precise vocabulary.";
+
+export const Route = createFileRoute("/")({
+	component: Home,
+	head: () => ({
+		meta: [
+			{ title },
+			{ name: "description", content: description },
+			{ property: "og:title", content: title },
+			{ property: "og:description", content: description },
+			{ name: "twitter:title", content: title },
+			{ name: "twitter:description", content: description },
+		],
+	}),
+});
 
 function matchesQuery(entry: (typeof entries)[number], query: string): boolean {
 	const haystack = [
@@ -56,12 +73,12 @@ function Home() {
 				<header>
 					<div className="py-10 md:py-12 md:max-w-5xl px-4 md:px-8 border-x mx-auto border-dashed">
 						<h1 className="lg:text-4xl text-xl font-extrabold tracking-tight">
-							Visual Dictionary for UI Elements
+							The Visual Dictionary for Web UI
 						</h1>
 						<p className="mt-2 max-w-2xl text-lg text-muted-foreground text-pretty">
-							Great resource for vibe coders, designers and design engineers to
-							better steer AI agents in the right direction.
+							Covering components, styles, and transitions
 						</p>
+						<GithubCta />
 					</div>
 					<div className="border-y border-dashed">
 						<InputGroup className="h-12 px-1 md:max-w-5xl mx-auto rounded-none border-y-0 md:px-6 border-dashed border-border focus-within:bg-input/40 duration-75 has-[[data-slot=input-group-control]:focus-visible]:border-border has-[[data-slot=input-group-control]:focus-visible]:ring-0 dark:bg-transparent dark:focus-within:bg-input/40">

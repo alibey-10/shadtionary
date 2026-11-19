@@ -33,6 +33,7 @@ function StylesIndex() {
 			intro={`${styles.length} visual styles to name when you prompt an AI animation or video tool. Each preview loops, and the phrase underneath is ready to paste.`}
 			categories={data.categories}
 			items={styles}
+			noun={{ one: "style", other: "styles" }}
 			renderPreview={(item, { rate, paused }) => (
 				<StyleStage item={item} rate={rate} paused={paused} />
 			)}
