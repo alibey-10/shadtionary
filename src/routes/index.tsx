@@ -7,6 +7,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import React, { useState } from "react";
+import { GithubCta } from "@/components/github-cta";
 import { LazyMount } from "@/components/lazy-mount";
 import { PreviewChrome } from "@/components/preview-chrome";
 import thumbnails from "@/components/thumbnails";
@@ -77,6 +78,7 @@ function Home() {
 						<p className="mt-2 max-w-2xl text-lg text-muted-foreground text-pretty">
 							Covering components, styles, and transitions
 						</p>
+						<GithubCta />
 					</div>
 					<div className="border-y border-dashed">
 						<InputGroup className="h-12 px-1 md:max-w-5xl mx-auto rounded-none border-y-0 md:px-6 border-dashed border-border focus-within:bg-input/40 duration-75 has-[[data-slot=input-group-control]:focus-visible]:border-border has-[[data-slot=input-group-control]:focus-visible]:ring-0 dark:bg-transparent dark:focus-within:bg-input/40">
