@@ -134,3 +134,7 @@ _Avoid_: Animation, effect, cut
 **Transition preview**:
 The looping, read-only animation on a Transition card, showing a list view (A) changing into a detail view (B) and back, drawn in **Abstract chrome** with theme colors.
 _Avoid_: Demo, Style preview
+
+**Home search**:
+The single search box on the home page that searches every Entry, Style, Transition and Comparison at once (`src/lib/search.ts`). With an empty query the page shows the Entry grid; with a query it shows one titled group per kind, best matches first, with live previews for Styles and Transitions. The query lives in the URL as `?q=`. Style and Transition results link to their card on the gallery page (`/styles#slug`), which is briefly outlined on arrival.
+_Avoid_: Per-page search as the main entry point, command palette, static preview frames

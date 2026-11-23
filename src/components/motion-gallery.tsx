@@ -7,6 +7,7 @@ import {
 	Tick02Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import { useLocation } from "@tanstack/react-router";
 import * as React from "react";
 
 import { GithubCta } from "@/components/github-cta";
@@ -82,6 +83,7 @@ export function MotionGallery<T extends GalleryItem>({
 	const [paused, setPaused] = React.useState(false);
 	const [query, setQuery] = React.useState("");
 	const normalizedQuery = query.trim().toLowerCase();
+	const highlighted = useHashHighlight();
 
 	React.useEffect(() => {
 		if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
@@ -229,7 +231,10 @@ export function MotionGallery<T extends GalleryItem>({
 												id={item.slug}
 												className="scroll-mt-28"
 											>
-												<GalleryCard item={item}>
+												<GalleryCard
+													item={item}
+													highlighted={highlighted === item.slug}
+												>
 													{renderPreview(item, { rate, paused })}
 												</GalleryCard>
 											</li>
@@ -245,15 +250,40 @@ export function MotionGallery<T extends GalleryItem>({
 	);
 }
 
+/**
+ * The slug in the URL hash, cleared after a moment, so a card reached from a
+ * link (such as a home page search result) is briefly outlined.
+ */
+function useHashHighlight(): string | null {
+	const hash = useLocation({ select: (location) => location.hash });
+	const [highlighted, setHighlighted] = React.useState<string | null>(null);
+
+	React.useEffect(() => {
+		if (!hash) return;
+		setHighlighted(hash);
+		const id = setTimeout(() => setHighlighted(null), 1600);
+		return () => clearTimeout(id);
+	}, [hash]);
+
+	return highlighted;
+}
+
 function GalleryCard({
 	item,
+	highlighted,
 	children,
 }: {
 	item: GalleryItem;
+	highlighted: boolean;
 	children: React.ReactNode;
 }) {
 	return (
-		<Card className="h-full gap-0 rounded-2xl bg-secondary/60 p-[2.5px] ring-0 dark:bg-secondary/40">
+		<Card
+			className={cn(
+				"h-full gap-0 rounded-2xl bg-secondary/60 p-[2.5px] ring-0 ring-primary/60 transition-shadow duration-700 dark:bg-secondary/40",
+				highlighted && "ring-2 duration-150",
+			)}
+		>
 			<div className="overflow-hidden rounded-xl border border-b-[3px]">
 				{children}
 			</div>

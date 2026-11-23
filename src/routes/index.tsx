@@ -1,23 +1,14 @@
 import {
-	ArrowRight01Icon,
 	Cancel01Icon,
 	LinkSquare01Icon,
 	Search01Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import React, { useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { GithubCta } from "@/components/github-cta";
-import { LazyMount } from "@/components/lazy-mount";
-import { PreviewChrome } from "@/components/preview-chrome";
-import thumbnails from "@/components/thumbnails";
+import { ComponentCard, SearchResultGroups } from "@/components/search-results";
 import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardTitle,
-} from "@/components/ui/card";
 import {
 	InputGroup,
 	InputGroupAddon,
@@ -27,13 +18,19 @@ import {
 } from "@/components/ui/input-group";
 import entries from "@/contstants/data.json";
 import { urls } from "@/contstants/urls";
+import { normalizeQuery, search, searchIndex } from "@/lib/search";
 
 const title = "Shadtionary - The Visual Dictionary for Web UI";
 const description =
 	"The visual dictionary for web UI, covering components, styles, and transitions. Learn the right names so you can steer AI agents with precise vocabulary.";
 
+type HomeSearch = { q?: string };
+
 export const Route = createFileRoute("/")({
 	component: Home,
+	validateSearch: (search: Record<string, unknown>): HomeSearch => ({
+		q: typeof search.q === "string" && search.q ? search.q : undefined,
+	}),
 	head: () => ({
 		meta: [
 			{ title },
@@ -46,26 +43,30 @@ export const Route = createFileRoute("/")({
 	}),
 });
 
-function matchesQuery(entry: (typeof entries)[number], query: string): boolean {
-	const haystack = [
-		entry.title,
-		entry.slug,
-		entry.description,
-		...entry.alsoCalled,
-	]
-		.join(" ")
-		.toLowerCase();
-
-	return haystack.includes(query);
-}
-
 function Home() {
-	const [query, setQuery] = useState("");
-	const normalizedQuery = query.trim().toLowerCase();
+	const { q = "" } = Route.useSearch();
+	const navigate = Route.useNavigate();
+	const [query, setQuery] = useState(q);
 
-	const filteredEntries = normalizedQuery
-		? entries.filter((entry) => matchesQuery(entry, normalizedQuery))
-		: entries;
+	// Follow the URL when it changes from outside the input (back / forward).
+	useEffect(() => {
+		setQuery((current) => (current === q ? current : q));
+	}, [q]);
+
+	const updateQuery = (value: string) => {
+		setQuery(value);
+		navigate({
+			search: { q: value || undefined },
+			replace: true,
+			resetScroll: false,
+		});
+	};
+
+	const normalizedQuery = normalizeQuery(query);
+	const results = normalizedQuery ? search(normalizedQuery) : null;
+	const count = results
+		? Object.values(results).reduce((sum, items) => sum + items.length, 0)
+		: searchIndex.length;
 
 	return (
 		<div className="px-3 md:px-10 lg:px-16">
@@ -84,25 +85,25 @@ function Home() {
 						<InputGroup className="h-12 px-1 md:max-w-5xl mx-auto rounded-none border-y-0 md:px-6 border-dashed border-border focus-within:bg-input/40 duration-75 has-[[data-slot=input-group-control]:focus-visible]:border-border has-[[data-slot=input-group-control]:focus-visible]:ring-0 dark:bg-transparent dark:focus-within:bg-input/40">
 							<InputGroupInput
 								type="text"
-								placeholder="Search for UI elements..."
+								aria-label="Search components, styles, transitions and comparisons"
+								placeholder="Search components, styles, transitions..."
 								className="h-full ml-1.5"
 								value={query}
-								onChange={(event) => setQuery(event.target.value)}
+								onChange={(event) => updateQuery(event.target.value)}
 								autoComplete="off"
 							/>
-							<InputGroupAddon className="">
+							<InputGroupAddon>
 								<HugeiconsIcon icon={Search01Icon} className="size-4" />
 							</InputGroupAddon>
 							<InputGroupAddon align="inline-end" className="pr-1">
-								<InputGroupText className="tabular-nums">
-									{filteredEntries.length}{" "}
-									{filteredEntries.length === 1 ? "element" : "elements"}
+								<InputGroupText className="tabular-nums" aria-live="polite">
+									{count} {count === 1 ? "item" : "items"}
 								</InputGroupText>
 								{query ? (
 									<InputGroupButton
 										size="icon-sm"
 										aria-label="Clear search"
-										onClick={() => setQuery("")}
+										onClick={() => updateQuery("")}
 									>
 										<HugeiconsIcon icon={Cancel01Icon} className="size-4" />
 									</InputGroupButton>
@@ -111,86 +112,46 @@ function Home() {
 						</InputGroup>
 					</div>
 				</header>
-				<section className=" md:max-w-5xl mx-auto py-10 border-x border-dashed px-4 md:px-8">
-					{filteredEntries.length === 0 ? (
-						<div className="flex flex-col items-center gap-4">
-							<p className="text-center text-muted-foreground">
-								No UI elements match &ldquo;{query}&rdquo;.
-							</p>
-							<Button
-								variant="default"
-								nativeButton={false}
-								size="lg"
-								render={(props) => (
-									<a
-										{...props}
-										href={urls.githubNewIssue}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										Request UI element
-										<HugeiconsIcon
-											icon={LinkSquare01Icon}
-											className="size-3.5"
-										/>
-									</a>
-								)}
-							/>
-						</div>
-					) : (
-						<ul className="grid gap-4 sm:grid-cols-2 lg:gap-8 md:gap-6">
-							{filteredEntries.map((entry) => {
-								const thumbnail =
-									thumbnails[entry.slug as keyof typeof thumbnails];
-
-								return (
-									<li key={entry.slug}>
-										<Link
-											to="/content/$slug"
-											params={{ slug: entry.slug }}
-											className="block h-full rounded-2xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+				{results && count > 0 ? (
+					<SearchResultGroups results={results} />
+				) : (
+					<section className="md:max-w-5xl mx-auto py-10 border-x border-dashed px-4 md:px-8">
+						{results ? (
+							<div className="flex flex-col items-center gap-4">
+								<p className="text-center text-muted-foreground">
+									Nothing matches &ldquo;{query}&rdquo;.
+								</p>
+								<Button
+									variant="default"
+									nativeButton={false}
+									size="lg"
+									render={(props) => (
+										<a
+											{...props}
+											href={urls.githubNewIssue}
+											target="_blank"
+											rel="noopener noreferrer"
 										>
-											<Card className="h-full rounded-2xl bg-secondary/60 p-[2.5px] ring-0 hover:bg-secondary dark:bg-secondary/40 hover:dark:bg-border">
-												<PreviewChrome
-													className="overflow-hidden"
-													contentClassName="py-3 min-h-48 lg:min-h-56"
-												>
-													<LazyMount rootMargin="10px 0px">
-														{" "}
-														<React.Fragment key={entry.slug}>
-															{thumbnail}
-														</React.Fragment>
-													</LazyMount>
-												</PreviewChrome>
-												<CardContent className="pb-4">
-													<CardTitle className="flex items-center justify-between gap-2 uppercase font-bold tracking-tight text-sm mb-2">
-														{entry.title}
-														<HugeiconsIcon
-															icon={ArrowRight01Icon}
-															className="size-4"
-														/>
-													</CardTitle>
-													<CardDescription className="line-clamp-2">
-														{entry.description}
-													</CardDescription>
-												</CardContent>
-												{/* <CardFooter className="justify-end bg-transparent border-t-0 pt-0">
-											<Button variant="secondary">
-												Deep dive{" "}
-												<HugeiconsIcon
-													icon={ArrowRight01Icon}
-													className="size-4"
-												/>
-											</Button>
-										</CardFooter> */}
-											</Card>
-										</Link>
+											Request UI element
+											<HugeiconsIcon
+												icon={LinkSquare01Icon}
+												className="size-3.5"
+											/>
+										</a>
+									)}
+								/>
+							</div>
+						) : (
+							<ul className="grid gap-4 sm:grid-cols-2 lg:gap-8 md:gap-6">
+								{entries.map((entry) => (
+									<li key={entry.slug}>
+										<ComponentCard entry={entry} />
 									</li>
-								);
-							})}
-						</ul>
-					)}
-				</section>
+								))}
+							</ul>
+						)}
+					</section>
+				)}
 			</div>
 		</div>
 	);
