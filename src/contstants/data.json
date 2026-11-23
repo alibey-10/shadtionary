@@ -1,5 +1,154 @@
 [
 	{
+		"slug": "combo-chart",
+		"title": "Combo Chart",
+		"description": "A combo chart is a multi-series plot that layers two chart types — usually bars and a line — on one shared category axis so related measures on different scales can be read together.",
+		"alsoCalled": [
+			"composed chart",
+			"combination chart",
+			"mixed chart",
+			"dual-axis chart"
+		],
+		"tags": []
+	},
+	{
+		"slug": "waterfall-chart",
+		"title": "Waterfall Chart",
+		"description": "A waterfall chart is a bridge plot of floating bars that walks from an opening total through positive and negative steps to a closing total.",
+		"alsoCalled": ["bridge chart", "cascade chart", "flying bricks chart"],
+		"tags": []
+	},
+	{
+		"slug": "histogram",
+		"title": "Histogram",
+		"description": "A histogram is a distribution plot of contiguous bins along a continuous numeric scale, so the shape, spread, and skew of a dataset read as adjacent bar heights.",
+		"alsoCalled": [
+			"frequency distribution chart",
+			"distribution histogram",
+			"latency histogram"
+		],
+		"tags": []
+	},
+	{
+		"slug": "sparkline",
+		"title": "Sparkline",
+		"description": "A sparkline is an axis-free micro chart placed inline beside a KPI or table value, so directional trend reads at a glance without taking up a full plot card.",
+		"alsoCalled": ["inline trend", "mini chart", "micro chart"],
+		"tags": []
+	},
+	{
+		"slug": "bar-list",
+		"title": "Bar List",
+		"description": "A bar list is a ranked vertical list of inline horizontal bars with labels and values, so top categories compare cleanly without full chart axes or gridlines.",
+		"alsoCalled": ["ranked bars", "inline bar list", "horizontal bar list"],
+		"tags": []
+	},
+	{
+		"slug": "distribution-bar",
+		"title": "Distribution Bar",
+		"description": "A distribution bar is a single 100% stacked horizontal strip split into proportional segments, so part-to-whole composition reads in one compact row.",
+		"alsoCalled": [
+			"segmented bar",
+			"stacked progress bar",
+			"proportional bar",
+			"breakdown bar"
+		],
+		"tags": []
+	},
+	{
+		"slug": "donut-chart",
+		"title": "Donut Chart",
+		"description": "A donut chart is a circular part-to-whole plot with a hollow center, so category shares read as ring arcs around a headline total or summary metric.",
+		"alsoCalled": ["doughnut chart", "ring chart", "share chart"],
+		"tags": []
+	},
+	{
+		"slug": "funnel-chart",
+		"title": "Funnel Chart",
+		"description": "A funnel chart is a sequential stage plot whose narrowing segments encode how volume drops off across steps in a linear process.",
+		"alsoCalled": ["conversion funnel", "pipeline chart", "stage funnel"],
+		"tags": []
+	},
+	{
+		"slug": "cohort-grid",
+		"title": "Cohort Grid",
+		"description": "A cohort grid is a triangular retention matrix that tracks grouped cohorts across elapsed intervals, using cell shading to expose decay and stabilization patterns.",
+		"alsoCalled": [
+			"cohort chart",
+			"retention table",
+			"retention matrix",
+			"retention triangle"
+		],
+		"tags": []
+	},
+	{
+		"slug": "activity-heatmap",
+		"title": "Activity Heatmap",
+		"description": "An activity heatmap is a calendar grid of daily cells shaded by intensity, so streaks, weekday rhythms, and quiet stretches across months read at a glance.",
+		"alsoCalled": [
+			"contribution graph",
+			"calendar heatmap",
+			"activity calendar"
+		],
+		"tags": []
+	},
+	{
+		"slug": "heatmap",
+		"title": "Heatmap",
+		"description": "A heatmap is a two-dimensional matrix whose cells encode magnitude with color intensity, so clusters, hotspots, and gaps across two variables stand out immediately.",
+		"alsoCalled": [
+			"heatmap chart",
+			"heatmap matrix",
+			"density grid",
+			"color matrix"
+		],
+		"tags": []
+	},
+	{
+		"slug": "treemap",
+		"title": "Treemap",
+		"description": "A treemap is a space-filling plot of nested rectangles whose areas encode value, so hierarchical totals and part-to-whole share read inside one compact frame.",
+		"alsoCalled": [
+			"treemap chart",
+			"squarified treemap",
+			"hierarchical tile chart"
+		],
+		"tags": []
+	},
+	{
+		"slug": "sankey-diagram",
+		"title": "Sankey Diagram",
+		"description": "A sankey diagram is a flow plot of nodes linked by proportional ribbons, so how a total splits, merges, and moves between stages reads as band thickness.",
+		"alsoCalled": ["sankey chart", "flow diagram", "alluvial diagram"],
+		"tags": []
+	},
+	{
+		"slug": "gantt-chart",
+		"title": "Gantt Chart",
+		"description": "A gantt chart is a horizontal schedule plot of task bars positioned along a timeline, so start dates, durations, overlaps, milestones, and dependencies read together.",
+		"alsoCalled": ["project schedule chart", "timeline chart", "roadmap chart"],
+		"tags": []
+	},
+	{
+		"slug": "dot-plot",
+		"title": "Dot Plot",
+		"description": "A dot plot is a categorical comparison chart that encodes values as positioned markers along a shared scale rather than filled bar area, keeping dense comparisons uncluttered.",
+		"alsoCalled": [
+			"Cleveland dot plot",
+			"dot comparison",
+			"dumbbell chart",
+			"strip plot"
+		],
+		"tags": []
+	},
+	{
+		"slug": "scatter-plot",
+		"title": "Scatter Plot",
+		"description": "A scatter plot is a Cartesian plot of points positioned by two continuous variables, so correlation, clusters, and outliers read as spatial distribution — with optional bubble size for a third measure.",
+		"alsoCalled": ["scatter chart", "scatter graph", "XY plot", "bubble chart"],
+		"tags": []
+	},
+	{
 		"slug": "radial-chart",
 		"title": "Radial Chart",
 		"description": "A radial chart is a polar plot of concentric bars, so each value reads as an arc length around a shared center rather than a length from a straight baseline.",

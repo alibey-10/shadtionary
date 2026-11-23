@@ -1,24 +1,35 @@
 import type { ReactNode } from "react";
 
 import { AccordionThumbnail } from "./accordion-thumbnail";
+import { ActivityHeatmapThumbnail } from "./activity-heatmap-thumbnail";
 import { AlertThumbnail } from "./alert-thumbnail";
 import { AreaChartThumbnail } from "./area-chart-thumbnail";
 import { AvatarGroupThumbnail } from "./avatar-group-thumbnail";
 import { BarChartThumbnail } from "./bar-chart-thumbnail";
+import { BarListThumbnail } from "./bar-list-thumbnail";
 import { BentoGridThumbnail } from "./bento-grid-thumbnail";
 import { BreadcrumbThumbnail } from "./breadcrumb-thumbnail";
 import { CalendarThumbnail } from "./calendar-thumbnail";
 import { CardThumbnail } from "./card-thumbnail";
 import { CarouselThumbnail } from "./carousel-thumbnail";
 import { CheckboxGroupThumbnail } from "./checkbox-group-thumbnail";
+import { CohortGridThumbnail } from "./cohort-grid-thumbnail";
+import { ComboChartThumbnail } from "./combo-chart-thumbnail";
 import { ComboboxThumbnail } from "./combobox-thumbnail";
 import { ContextMenuThumbnail } from "./context-menu-thumbnail";
 import { DataTableThumbnail } from "./data-table-thumbnail";
 import { DateInputThumbnail } from "./date-input-thumbnail";
 import { DatePickerThumbnail } from "./date-picker-thumbnail";
 import { DialogThumbnail } from "./dialog-thumbnail";
+import { DistributionBarThumbnail } from "./distribution-bar-thumbnail";
+import { DonutChartThumbnail } from "./donut-chart-thumbnail";
+import { DotPlotThumbnail } from "./dot-plot-thumbnail";
 import { DrawerThumbnail } from "./drawer-thumbnail";
 import { DropdownMenuThumbnail } from "./dropdown-menu-thumbnail";
+import { FunnelChartThumbnail } from "./funnel-chart-thumbnail";
+import { GanttChartThumbnail } from "./gantt-chart-thumbnail";
+import { HeatmapThumbnail } from "./heatmap-thumbnail";
+import { HistogramThumbnail } from "./histogram-thumbnail";
 import { HoverCardThumbnail } from "./hover-card-thumbnail";
 import { InputOtpThumbnail } from "./input-otp-thumbnail";
 import { LightboxThumbnail } from "./lightbox-thumbnail";
@@ -33,10 +44,13 @@ import { PopoverThumbnail } from "./popover-thumbnail";
 import { RadarChartThumbnail } from "./radar-chart-thumbnail";
 import { RadialChartThumbnail } from "./radial-chart-thumbnail";
 import { RadioGroupThumbnail } from "./radio-group-thumbnail";
+import { SankeyDiagramThumbnail } from "./sankey-diagram-thumbnail";
+import { ScatterPlotThumbnail } from "./scatter-plot-thumbnail";
 import { SelectThumbnail } from "./select-thumbnail";
 import { SheetThumbnail } from "./sheet-thumbnail";
 import { SiteHeaderThumbnail } from "./site-header-thumbnail";
 import { SliderThumbnail } from "./slider-thumbnail";
+import { SparklineThumbnail } from "./sparkline-thumbnail";
 import { StepperThumbnail } from "./stepper-thumbnail";
 import { SwitchThumbnail } from "./switch-thumbnail";
 import { TabsThumbnail } from "./tabs-thumbnail";
@@ -46,28 +60,41 @@ import { TimeInputThumbnail } from "./time-input-thumbnail";
 import { TimelineThumbnail } from "./timeline-thumbnail";
 import { ToggleGroupThumbnail } from "./toggle-group-thumbnail";
 import { TooltipThumbnail } from "./tooltip-thumbnail";
+import { TreemapThumbnail } from "./treemap-thumbnail";
+import { WaterfallChartThumbnail } from "./waterfall-chart-thumbnail";
 import { WizardThumbnail } from "./wizard-thumbnail";
 
 const thumbnails = {
 	accordion: <AccordionThumbnail />,
+	"activity-heatmap": <ActivityHeatmapThumbnail />,
+	alert: <AlertThumbnail />,
 	"area-chart": <AreaChartThumbnail />,
 	"avatar-group": <AvatarGroupThumbnail />,
 	"bar-chart": <BarChartThumbnail />,
+	"bar-list": <BarListThumbnail />,
 	"bento-grid": <BentoGridThumbnail />,
-	alert: <AlertThumbnail />,
 	breadcrumb: <BreadcrumbThumbnail />,
 	calendar: <CalendarThumbnail />,
 	card: <CardThumbnail />,
 	carousel: <CarouselThumbnail />,
 	"checkbox-group": <CheckboxGroupThumbnail />,
+	"cohort-grid": <CohortGridThumbnail />,
 	combobox: <ComboboxThumbnail />,
+	"combo-chart": <ComboChartThumbnail />,
 	"context-menu": <ContextMenuThumbnail />,
 	"data-table": <DataTableThumbnail />,
 	"date-input": <DateInputThumbnail />,
 	"date-picker": <DatePickerThumbnail />,
 	dialog: <DialogThumbnail />,
+	"distribution-bar": <DistributionBarThumbnail />,
+	"donut-chart": <DonutChartThumbnail />,
+	"dot-plot": <DotPlotThumbnail />,
 	drawer: <DrawerThumbnail />,
 	"dropdown-menu": <DropdownMenuThumbnail />,
+	"funnel-chart": <FunnelChartThumbnail />,
+	"gantt-chart": <GanttChartThumbnail />,
+	heatmap: <HeatmapThumbnail />,
+	histogram: <HistogramThumbnail />,
 	"hover-card": <HoverCardThumbnail />,
 	"input-otp": <InputOtpThumbnail />,
 	lightbox: <LightboxThumbnail />,
@@ -82,10 +109,13 @@ const thumbnails = {
 	"radar-chart": <RadarChartThumbnail />,
 	"radial-chart": <RadialChartThumbnail />,
 	"radio-group": <RadioGroupThumbnail />,
+	"sankey-diagram": <SankeyDiagramThumbnail />,
+	"scatter-plot": <ScatterPlotThumbnail />,
 	select: <SelectThumbnail />,
 	sheet: <SheetThumbnail />,
 	"site-header": <SiteHeaderThumbnail />,
 	slider: <SliderThumbnail />,
+	sparkline: <SparklineThumbnail />,
 	stepper: <StepperThumbnail />,
 	switch: <SwitchThumbnail />,
 	tabs: <TabsThumbnail />,
@@ -95,6 +125,8 @@ const thumbnails = {
 	timeline: <TimelineThumbnail />,
 	"toggle-group": <ToggleGroupThumbnail />,
 	tooltip: <TooltipThumbnail />,
+	treemap: <TreemapThumbnail />,
+	"waterfall-chart": <WaterfallChartThumbnail />,
 	wizard: <WizardThumbnail />,
 } satisfies Record<string, ReactNode>;
 
